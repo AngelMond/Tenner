@@ -1,15 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './styles/styles.css'
+
+import Header from './components/Header'
+
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <main className="container-full">
 
-      </main>
-      <Footer/>
-    </div>
+        <div className="App container-full">
+          <Header />
+            
+            <main className="">
+            </main>
+            
+            {/* <Footer/> */}
+        </div>
   );
 }
 

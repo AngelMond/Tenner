@@ -1,0 +1,31 @@
+:root{
+    --background-header:#002B5B ;
+    --hover-header-links: #8FE3CF;
+}
+
+/*background for header*/
+#nav{
+    background-color: var(--background-header);
+    min-height: 150px;
+}
+/*color links*/
+.navbar-links{
+    color: white !important;
+}
+/*change link color when hover*/
+.navbar-links:hover{
+    color: var(--hover-header-links) !important;
+}
+
+/*search input styles*/
+input[type=search]{
+   outline: none;
+   min-height: 40px;
+   border-radius: 10px;
+   background-color: none;
+}
+
+input[type=search]:focus {
+    background-color: lightblue;
+  }
+
