@@ -8,6 +8,7 @@
     background-color: var(--background-header);
     min-height: 150px;
 }
+
 /*color links*/
 .navbar-links{
     color: white !important;
@@ -17,15 +18,28 @@
     color: var(--hover-header-links) !important;
 }
 
+/*Container for search input*/
+.search-input-container{
+    background-color: #fff;
+}
+
 /*search input styles*/
 input[type=search]{
    outline: none;
-   min-height: 40px;
-   border-radius: 10px;
-   background-color: none;
+   min-height: 2.5rem;
+   min-width: 25rem !important;
+   border: none;
 }
 
-input[type=search]:focus {
-    background-color: lightblue;
-  }
 
+
+.search-button{
+    min-height: 40px;
+    border: none;
+    background-color: #1DBF73;
+}
+.search-button:hover{
+    /* box-shadow: 0px 0px 2px 2px var(--hover-header-links) inset; */
+    cursor: pointer;
+    background-color: #1ba162;
+}
