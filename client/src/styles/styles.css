@@ -6,7 +6,7 @@
 /*background for header*/
 #nav{
     background-color: var(--background-header);
-    min-height: 150px;
+    min-height: 120px;
 }
 
 /*color links*/
@@ -17,6 +17,22 @@
 .navbar-links:hover{
     color: var(--hover-header-links) !important;
 }
+
+#banner{
+    margin-top: 120px;
+    max-width: 100%;
+    height: 80vh;
+    background-image: url(../images/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: left;
+}
+
+#banner #wrap{
+    max-width: 1000px;
+    height: 100%;
+}
+
 
 /*Container for search input*/
 .search-input-container{
@@ -30,9 +46,7 @@ input[type=search]{
    min-width: 25rem !important;
    border: none;
 }
-
-
-
+/*Search input from banner*/
 .search-button{
     min-height: 40px;
     border: none;
