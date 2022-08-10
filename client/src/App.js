@@ -3,6 +3,7 @@ import React from 'react';
 import './styles/styles.css'
 
 import Header from './components/header/Header'
+import SignupAndLogin from './components/loginAndsignup/SignupAndLogin';
 
 
 function App() {
@@ -10,7 +11,9 @@ function App() {
 
         <div className="App container-full">
           <Header />
-            
+          
+          <SignupAndLogin />
+          
             <main className="">
             </main>
             
