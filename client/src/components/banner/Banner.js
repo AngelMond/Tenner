@@ -3,8 +3,8 @@ import React from 'react';
 export default function Banner() {
     return (
         <div id='banner' className='container-fluid p-0'>
-            <div id='wrap' className='border border-danger row d-flex d-wrap align-items-center p-3'>
-                <header id='header' className='border border-warning p-2'>
+            <div id='wrap' className='row d-flex d-wrap align-items-center p-3'>
+                <header id='header' className='p-2'>
                     <h1 className='col-12 text-center display-1 fw-bold p-2'>Tenner</h1>
                     <p className='col-12 text-center p-2 display-4'>Find your Next programmer.</p>
                     {/* Search Input global container*/}
