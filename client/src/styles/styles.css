@@ -1,6 +1,7 @@
 :root{
     --background-header:#002B5B ;
     --hover-header-links: #8FE3CF;
+    --font-family-navbar:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
 }
 
 /*background for header*/
@@ -12,6 +13,8 @@
 /*color links*/
 .navbar-links{
     color: white !important;
+    font-family: var(--font-family-navbar);
+    letter-spacing: 1px;
 }
 /*change link color when hover*/
 .navbar-links:hover{
@@ -25,7 +28,7 @@
     background-image: url(../images/banner.jpg);
     background-repeat: no-repeat;
     background-size: cover; 
-    background-position: left;
+    background-position:  0px -170px;
 }
 
 #banner #wrap{
