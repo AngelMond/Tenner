@@ -3,19 +3,20 @@ import React from 'react';
 import './styles/styles.css'
 
 import Header from './components/header/Header'
-import Chat from '../src/components/chat/Chat.jsx'
+import Banner from './components/banner/Banner'
+// import Chat from '../src/components/chat/Chat.jsx'
 
 
 function App() {
   return (
 
-        <div className="App container-full">
-          <Header/>
-            
+        <div className="App container-fluid p-0">
+            <Header/>
+            <Banner/>
             <main className="">
            
             </main>
-            <Chat/>
+            {/* <Chat/> */}
             
             
             {/* <Footer/> */}
