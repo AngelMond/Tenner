@@ -2,24 +2,33 @@ import React from 'react';
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './styles/styles.css'
 
-import Header from './components/header/Header'
+import Header from './components/header/Header';
+import Banner from './components/banner/Banner';
 import SignupAndLogin from './components/loginAndsignup/SignupAndLogin';
+import Chat from './components/chat/Chat';
 
 
-function App() {
+
+export default function App() {
   return (
+    <div className="App container-full">
+      <Header />
+      <Banner />
+      
+      <SignupAndLogin />
 
-        <div className="App container-full">
-          <Header />
-          
-          <SignupAndLogin />
-          
-            <main className="">
-            </main>
+    
+      <main className="">
+        {/* <Chat/> */}
             
-            {/* <Footer/> */}
-        </div>
-  );
+            
+        {/* <Footer/> */}
+      </main>
+
+    </div>
+  )
 }
 
-export default App;
+
+
+
