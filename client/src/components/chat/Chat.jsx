@@ -2,6 +2,7 @@ import React from 'react'
 import './chat.css'
 import Conversation from '../conversations/Conversation'
 import Message from '../message/Message'
+import ChatOnline from '../chatOnline/ChatOnline'
 
 const Chat = () => {
   return (
@@ -23,14 +24,18 @@ const Chat = () => {
                 <Message own={true}/>
                 <Message/>
                 </div>
-                <div className="chatboxbottom">
+                <div className="chatboxBottom">
+                    <textarea className='chatMessageInput' placeholder='witre something...'></textarea>
+                    <button className='chatSubmmitButton'>send</button>
                     
                 </div>
             </div>
         </div>
         <div className="chatonline">
             <div className="chatonlineWrapper">
-                Online
+                <ChatOnline/>
+                <ChatOnline/>
+                <ChatOnline/>
             </div>
         </div>
     </div>
