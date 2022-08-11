@@ -1,4 +1,4 @@
-import '../styles/ViewProfile.css';
+import '../../styles/ViewProfile.css';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -6,7 +6,7 @@ import Container from "react-bootstrap/esm/Container";
 import Button from 'react-bootstrap/Button'
 
 // import images
-import user3 from '../assets/user-3.jpg';
+import user3 from '../../assets/user-3.jpg';
 
 
 export default function ViewProfile() {
