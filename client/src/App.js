@@ -19,7 +19,7 @@ export default function App() {
 
     
       <main className="">
-        {/* <Chat/> */}
+        <Chat/>
             
             
         {/* <Footer/> */}
