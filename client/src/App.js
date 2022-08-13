@@ -19,11 +19,10 @@ export default function App() {
 
     
       <main className="">
-<<<<<<< HEAD
+
          <Chat/>
-=======
-        <Chat/>
->>>>>>> a2c1ed05362e1c33f0f35ee751c9b77191c21bac
+
+
             
             
         {/* <Footer/> */}
