@@ -1,4 +1,4 @@
-[{"id":1,"firstName":"Obie","lastName":"Brightey","age":1996,"username":"obrightey0","email":"obrightey0@networkadvertising.org","password":"MLzKfp5","role":"Estimator"},
+module.exports = [{"id":1,"firstName":"Obie","lastName":"Brightey","age":1996,"username":"obrightey0","email":"obrightey0@networkadvertising.org","password":"MLzKfp5","role":"Estimator"},
 {"id":2,"firstName":"Karolina","lastName":"Colcutt","age":2010,"username":"kcolcutt1","email":"kcolcutt1@sciencedirect.com","password":"EXhdLlYSnpu","role":"Construction Worker"},
 {"id":3,"firstName":"Quintina","lastName":"Hadfield","age":2004,"username":"qhadfield2","email":"qhadfield2@reuters.com","password":"6D0ATL","role":"Construction Foreman"},
 {"id":4,"firstName":"Biron","lastName":"Rizzi","age":1997,"username":"brizzi3","email":"brizzi3@infoseek.co.jp","password":"Kc3GPeSIDVp2","role":"Subcontractor"},
