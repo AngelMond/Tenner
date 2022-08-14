@@ -31,8 +31,24 @@ const typeDefs = gql`
     }
  
     type Query {
-        clents: [Client!]!
-        client(id: ID!): User
+        clients: [Client!]!
+        client(id: ID!): Client!
+        suppliers: [Supplier!]!
+        supplier(id: ID!): Supplier!
+        images: [Images!]!
+        image(id: ID!): Images!
+    }
+    input createClientInput {
+        firstName: String!
+        lastName: String!
+        age: Int!
+        username: String!
+        email: String!
+        password: String!
+    }
+
+    type Mutation {
+        createClient(input: createClientInput!): Client!
     }
 `;
 
