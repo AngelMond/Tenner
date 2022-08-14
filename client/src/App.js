@@ -14,7 +14,7 @@ import ViewProfile from './components/userProfile/ViewProfile';
 export default function App() {
   return (
     <div className="App container-full">
-      <Header />
+      {/* <Header /> */}
       {/* <Banner /> */}
       
       {/* <SignupAndLogin /> */}
