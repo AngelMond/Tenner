@@ -7,6 +7,7 @@ import { useContext, useState } from 'react'
 import { useEffect } from 'react'
 import {AuthContext} from ''
 import axios from 'axios'
+import { useRef } from 'react'
 
 
 export default function Chat() {
@@ -16,7 +17,8 @@ export default function Chat() {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState("");
     {/* AuthContext te trae toda la informacion de usuario min 48*/}
-    const {user} = useContext (AuthContext)
+    const {user} = useContext (AuthContext);
+    const scrollRef = useRef ();
 
     useEffect (()=>{
         const getConversations = async ()=>{
@@ -54,10 +56,15 @@ export default function Chat() {
         try {
             const res = await axios.post("/messages", message);
             setMessages([...messages, res.data])
+            setNewMessage("")
         } catch (err) {
             console.log(err);
         }
     };
+
+    useEffect(()=>{
+        scrollRef.current?.scrollIntoView({behavior:"smooth"})
+    },[messages])
 
   return (
     <div className='chat'>
@@ -79,7 +86,9 @@ export default function Chat() {
                 <>
                 <div className="chatboxTop">
                     {messages.map(m=>(
+                        <div ref={scrollRef}>
                         <Message message={m} own={m.sender === user._id}/>
+                        </div>
                     ))}
                 </div>
                 <div className="chatboxBottom">
