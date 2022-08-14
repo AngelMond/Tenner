@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/esm/Container";
 
 // import images
-// import user1 from '../assets/user-1.jpg';
+import user1 from '../../images/user-1.jpg';
 // import user2 from '../assets/user-2.jpg';
 // import user3 from '../assets/user-3.jpg';
 

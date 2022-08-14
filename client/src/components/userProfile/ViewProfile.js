@@ -1,4 +1,4 @@
-import '../../styles/ViewProfile.css';
+import './ViewProfile.css'
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -6,14 +6,14 @@ import Container from "react-bootstrap/esm/Container";
 import Button from 'react-bootstrap/Button'
 
 // import images
-import user3 from '../../assets/user-3.jpg';
+
 
 
 export default function ViewProfile() {
     return(
         <div>
             <div className='userContainer text-center container'>
-           <Card.Img className='' src={user3} />
+           {/* <Card.Img className='' src={user3} /> */}
             <h1 className='pt-4'>Monica </h1>
             <h6>I will design your website in three days.</h6>
            </div>
