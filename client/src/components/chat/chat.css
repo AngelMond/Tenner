@@ -24,6 +24,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 
 }
 
@@ -65,4 +66,12 @@
 .chatmenuWrapper,.chatboxWrapper,.chatonlineWrapper {
     padding: 10px;
      height: 100%;
+}
+
+.noConversationText {
+    position: absolute;
+    top: 10%;
+    font-size: 50px;
+    color: rgba(224, 220, 220, .8);
+    cursor: default;
 }
