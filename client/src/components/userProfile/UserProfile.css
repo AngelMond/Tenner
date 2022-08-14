@@ -1,0 +1,11 @@
+.cardContainer {
+    margin-top: 12rem;
+}
+
+.test {
+    font-weight: 800;
+}
+
+.cardUsername {
+    border-bottom: 2px solid black;
+}

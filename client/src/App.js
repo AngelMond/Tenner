@@ -6,6 +6,8 @@ import Header from './components/header/Header';
 import Banner from './components/banner/Banner';
 import SignupAndLogin from './components/loginAndsignup/SignupAndLogin';
 import Chat from './components/chat/Chat';
+import UserProfile from './components/userProfile/UserProfile';
+import ViewProfile from './components/userProfile/ViewProfile';
 
 
 
@@ -13,16 +15,16 @@ export default function App() {
   return (
     <div className="App container-full">
       <Header />
-      <Banner />
+      {/* <Banner /> */}
       
-      <SignupAndLogin />
+      {/* <SignupAndLogin /> */}
 
     
       <main className="">
 
-         <Chat/>
-
-
+         {/* <Chat/> */}
+      <UserProfile />
+      <ViewProfile />
             
             
         {/* <Footer/> */}
