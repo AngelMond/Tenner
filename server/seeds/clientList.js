@@ -1,4 +1,4 @@
-[{"id":1,"firstName":"Davis","lastName":"Bonifant","age":1984,"username":"dbonifant0","email":"dbonifant0@de.vu","password":"pHJs2T1DydT"},
+module.exports = [{"id":1,"firstName":"Davis","lastName":"Bonifant","age":1984,"username":"dbonifant0","email":"dbonifant0@de.vu","password":"pHJs2T1DydT"},
 {"id":2,"firstName":"Vidovic","lastName":"Castelletto","age":1993,"username":"vcastelletto1","email":"vcastelletto1@moonfruit.com","password":"2tYTMLX9I"},
 {"id":3,"firstName":"Ekaterina","lastName":"Jenks","age":1992,"username":"ejenks2","email":"ejenks2@hao123.com","password":"sdwO5KE"},
 {"id":4,"firstName":"Cyndia","lastName":"Tandy","age":2010,"username":"ctandy3","email":"ctandy3@deviantart.com","password":"UtlEZgqLE"},
