@@ -1,4 +1,6 @@
 export default function Header() {
+    const path = window.location.pathname
+
     return (
 
         <header class="row">
@@ -41,7 +43,6 @@ export default function Header() {
                             <ul class="col-12 col-sm-6 col-md-3 navbar-nav fs-3 ">
                                 <li class="nav-item"><a href='/home' class="navbar-links nav-link fs-4">Home</a></li>
                                 <li class="nav-item"><a href='/login' class="navbar-links nav-link fs-4">Login</a></li>
-                                <li class="nav-item"><a href='/sign up' class="navbar-links nav-link fs-4">SignUp</a></li>
                             </ul>
                         </div>
                     </div>
@@ -49,4 +50,12 @@ export default function Header() {
             </nav>
         </header>
     )
+}
+
+function CustomLink ({ href, children, ...props}) {
+    const path = window.location.pathname
+    return (
+        <a href = {href}>{children}</a>
+    )
+
 }
