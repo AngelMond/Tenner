@@ -1,6 +1,4 @@
 export default function Header() {
-    const path = window.location.pathname
-
     return (
 
         <header class="row">
@@ -52,10 +50,3 @@ export default function Header() {
     )
 }
 
-function CustomLink ({ href, children, ...props}) {
-    const path = window.location.pathname
-    return (
-        <a href = {href}>{children}</a>
-    )
-
-}
