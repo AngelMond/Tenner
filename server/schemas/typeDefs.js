@@ -30,12 +30,18 @@ const typeDefs = gql`
         content: String!
     }
 
+    type Auth {
+        token: ID!
+        client: Client
+    }
+
  
     type Query {
+        me: Client
         clients: [Client!]!
-        client(id: ID!): Client!
+        client(_id: ID!): Client!
         suppliers: [Supplier!]!
-        supplier(id: ID!): Supplier!
+        supplier(_id: ID!): Supplier!
         images: [Images!]!
         image(id: ID!): Images!
     }
@@ -60,7 +66,8 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        createClient(input: createClientInput!): Client!
+        login(email: String! password: String!):Auth
+        createClient(input: createClientInput!):Auth
         createSupplier(input: createSupplierInput!): Supplier!
     }
 `;
