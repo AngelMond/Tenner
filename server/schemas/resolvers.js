@@ -1,25 +1,22 @@
-const clientList = require('../seeds/clientList');
-const supplierList = require('../seeds/supplierList');
-const imagesList = require('../seeds/imagesList');
-const _ = require('lodash');
+const {Client, Supplier} = require('../models');
 
 const resolvers = {
     Query: {
         clients: () => {
-            return clientList;
+            return Client.find({});
         },
-        client: (parent, args) => {
-            const id = args.id;
-            const client = _.find(clientList, {id: Number(id)});
+        client: async (parent, args) => {
+            const {id} = args;
+            const client = await Client.findById({id: Number(id)});
 
             return client;
         },
         suppliers: () => {
-            return supplierList;
+            return Supplier.find({});
         },
         supplier: (parent, args) => {
-            const id = args.id;
-            const supplier = _.find(supplierList, {id: Number(id)});
+            const {id} = args;
+            const supplier = Supplier.findById({id: Number(id)});
 
             return supplier;
         },
@@ -41,13 +38,18 @@ const resolvers = {
         }
     },
     Mutation: {
-        createClient: (parent, args) => {
-            const client = args.input;
-            const lastId = clientList[clientList.length-1].id;
-            client.id = lastId + 1;
-            clientList.push(client);
+        createClient: async (parent, args) => {
+            const {input} = args;
+            const client = await Client.create(input);
 
             return client;
+        },
+        createSupplier: async (parent, args) => {
+            const {input} = args;
+            const supplier = await Supplier.create(input);
+            // const token = signToken(user);
+
+            return supplier;
         }
     }
 }
