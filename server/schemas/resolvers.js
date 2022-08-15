@@ -1,22 +1,31 @@
 const {Client, Supplier} = require('../models');
+const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require('apollo-server-express');
 
 const resolvers = {
     Query: {
-        clients: () => {
-            return Client.find({});
+        me: async () => {
+            if(context.client){
+                return Client.findOne({ _id: context.client._id });
+            }
+
+            throw new AuthenticationError('Client not found');
+        },
+        clients: async () => {
+            return await Client.find({});
         },
         client: async (parent, args) => {
-            const {id} = args;
-            const client = await Client.findById({id: Number(id)});
+            const {_id} = args;
+            const client = await Client.findById({_id});
 
             return client;
         },
-        suppliers: () => {
-            return Supplier.find({});
+        suppliers: async () => {
+            return await Supplier.find({});
         },
-        supplier: (parent, args) => {
-            const {id} = args;
-            const supplier = Supplier.findById({id: Number(id)});
+        supplier: async (parent, args) => {
+            const {_id} = args;
+            const supplier = await Supplier.findById({_id});
 
             return supplier;
         },
@@ -41,8 +50,9 @@ const resolvers = {
         createClient: async (parent, args) => {
             const {input} = args;
             const client = await Client.create(input);
+            const token = signToken(client);
 
-            return client;
+            return {token, client};
         },
         createSupplier: async (parent, args) => {
             const {input} = args;
@@ -50,7 +60,24 @@ const resolvers = {
             // const token = signToken(user);
 
             return supplier;
-        }
+        },
+        login: async (parent, {email, password}) => {
+            const client = await Client.findOne({email});
+
+            if(!client){
+                throw new AuthenticationError('No user found with this email address');
+            }
+
+            const correctPw = await client.isCorrectPassword(password);
+
+            if(!correctPw){
+                throw new AuthenticationError('Invalid Password');
+            }
+
+            const token = signToken(client);
+
+            return {token, client};
+        },
     }
 }
 
