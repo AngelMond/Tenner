@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+
 const supplierSchema = new Schema(
   {
     firstName: {
@@ -45,7 +46,20 @@ const supplierSchema = new Schema(
   }
 );
 
-
+// hash user password
+supplierSchema.pre('save', async function (next) {
+    if (this.isNew || this.isModified('password')) {
+      const saltRounds = 10;
+      this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+  
+    next();
+  });
+  
+  // custom method to compare and validate password for logging in
+  supplierSchema.methods.isCorrectPassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+  };
 
 const Supplier = model('Supplier', supplierSchema);
 
