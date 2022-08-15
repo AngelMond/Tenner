@@ -3,7 +3,7 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
 
     type Client {
-        id: ID!
+        _id: ID!
         firstName: String!
         lastName: String!
         age: Int!
@@ -14,7 +14,7 @@ const typeDefs = gql`
     }
 
     type Supplier {
-        id: ID!
+        _id: ID!
         firstName: String!
         lastName: String!
         age: Int!
@@ -29,6 +29,7 @@ const typeDefs = gql`
         profile: String!
         content: String!
     }
+
  
     type Query {
         clients: [Client!]!
@@ -38,6 +39,7 @@ const typeDefs = gql`
         images: [Images!]!
         image(id: ID!): Images!
     }
+
     input createClientInput {
         firstName: String!
         lastName: String!
@@ -47,8 +49,19 @@ const typeDefs = gql`
         password: String!
     }
 
+    input createSupplierInput {
+        firstName: String!
+        lastName: String!
+        age: Int!
+        username: String!
+        email: String!
+        password: String!
+        role: String!
+    }
+
     type Mutation {
         createClient(input: createClientInput!): Client!
+        createSupplier(input: createSupplierInput!): Supplier!
     }
 `;
 
