@@ -1,16 +1,17 @@
-import React from 'react'
+// import React from 'react'
 
-import Header from '../components/header/Header'
-import SignupAndLogin from '../components/loginAndsignup/SignupAndLogin'
+// import Header from '../components/header/Header'
+// import SignupAndLogin from '../components/loginAndsignup/SignupAndLogin'
+// import Loginform from "../components/loginAndsignup/Loginform"
 
 
-export default function Register() {
-  return (
+// export default function Register() {
+//   return (
 
-    <>
-     <Header />
-     <SignupAndLogin />
-    </>
+//     <>
+//      <h1>alsdjfñalskdjfalñksdjf</h1>
+//      <Loginform />
+//     </>
         
-  )
-}
+//   )
+// }
