@@ -63,6 +63,10 @@ clientSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
+clientSchema.virtual('suppliersCount').get( function () {
+  return this.suppliers.length;
+});
+
 
 const Client = model('Client', clientSchema);
 
