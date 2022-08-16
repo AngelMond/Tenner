@@ -1,15 +1,16 @@
-const { Schema, model } = require('mongoose');
+const { Schema } = require('mongoose');
 
 
 const cardSchema = new Schema(
   {
     description: {
-        type: String,
-        required: true
+        type: String
     },
     price: {
-        type: Number,
-        required: true
+        type: Number
+    },
+    image:{
+      type: String
     }
   },
   // set this to use virtual below
@@ -19,3 +20,5 @@ const cardSchema = new Schema(
     },
   }
 );
+
+module.exports = cardSchema;
