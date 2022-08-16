@@ -12,12 +12,6 @@ const cardSchema = new Schema(
     image:{
       type: String
     }
-  },
-  // set this to use virtual below
-  {
-    toJSON: {
-      virtuals: true,
-    },
   }
 );
 
