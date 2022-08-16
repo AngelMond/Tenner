@@ -61,6 +61,10 @@ supplierSchema.pre('save', async function (next) {
     return bcrypt.compare(password, this.password);
   };
 
+  supplierSchema.virtual('cardCount').get(function () {
+    return this.card.length;
+  });
+
 const Supplier = model('Supplier', supplierSchema);
 
 module.exports = Supplier;
