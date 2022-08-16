@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const { cardSchema } = require('./Card');
 
 
 const supplierSchema = new Schema(
@@ -35,9 +36,7 @@ const supplierSchema = new Schema(
       type: String,
       required: true,
     },
-    description: {
-
-    }
+    card: [ cardSchema ]
   },
   // set this to use virtual below
   {
