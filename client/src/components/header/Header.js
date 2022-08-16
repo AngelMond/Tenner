@@ -41,6 +41,7 @@ export default function Header() {
                             <ul class="col-12 col-sm-6 col-md-3 navbar-nav fs-3 ">
                                 <li class="nav-item"><a href='/home' class="navbar-links nav-link fs-4">Home</a></li>
                                 <li class="nav-item"><a href='/login' class="navbar-links nav-link fs-4">Login</a></li>
+                                <li class="nav-item"><a href='/signup' class="navbar-links nav-link fs-4">Sign-Up</a></li>
                             </ul>
                         </div>
                     </div>
