@@ -32,8 +32,11 @@ const supplierSchema = new Schema(
       required: true,
     },
     role: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
+    },
+    description: {
+
     }
   },
   // set this to use virtual below
