@@ -60,3 +60,27 @@ input[type=search]{
     cursor: pointer;
     background-color: #1ba162;
 }
+
+
+/* STYLES for Supplier card container*/
+.supplier-card-container{
+    margin-top: 200px;
+}
+
+.descriptionInputCardSupplier{
+    min-height: 100px !important;
+    max-height: 150px !important;
+}
+
+.drag-area{
+    border:  3px dashed #bcc1c5;
+    width: 500px;
+    height: 200px;
+}
+
+/*This will be active when dragging files above the interface */
+.drag.area.active{
+    background-color: #b8d4fe;
+    color: black;
+    border: 2px dashed orange;
+}
