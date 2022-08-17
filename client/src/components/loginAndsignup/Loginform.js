@@ -1,57 +1,59 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import "./SignupAndLogin.css"
 import { useState } from "react"
-import Auth from "../../utils/mutations";
-import{ useMutation } from "@apollo/client"
+import Auth from "../../utils/auth";
+import{ useMutation } from "@apollo/client";
+import { LOGIN_CLIENT } from '../../utils/mutations';
 
 
 export default function Loginform() {
 
-  // const LOGIN_USER = "loginUser";
-
-  const [userFormData, setUserFormData] = useState({ email: "", password: ""});
+  const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
-  const[showAlert, setShowAlert] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
-  // const[loginUser, {error, data}] = useMutation(LOGIN_USER);
+  const [loginClient, {error, data}] = useMutation(LOGIN_CLIENT);
 
-  const handleInputchange = (event) => {
+  const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setUserFormData({...userFormData, [name]: value });
+    setUserFormData({ ...userFormData, [name]: value });
   };
 
-  const HandleFormSubmit = ""
-  //   event.preventDefault();
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
 
-  //   const form = event.currentTarget;
-  //   if (form.checkValidity() === false) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //   }
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
 
-  //   try {
-  //     const { data } = await loginUser({
-  //       variables: userFormData
-  //     });
+    try {
 
-  //     Auth.login(data.login.token);
-  //   } catch (err) {
-  //     console.log(err);
-  //     setShowAlert(true);
-  //   }
+      const { data } = await loginClient({
+        variables: userFormData
+      });
 
-  //   setUserFormData({
-  //     username:"",
-  //     email:"",
-  //     password:"",
-  //   });
-  // };
+      console.log(data);
+      Auth.login(data.loginClient.token);
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true);
+    }
+
+    setUserFormData({
+      email: '',
+      password: '',
+    });
+  };
 
   return (
 
 
     <div className='Auth-form-container mt-3'>
-      <form className="Auth-form" noValidate validated = {validated} onSubmit={HandleFormSubmit}>
+      <form className="Auth-form" noValidate validated = {validated} onSubmit={handleFormSubmit}>
         {/* <alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant ="danger">
           Something went wrong with your login credentials!
         </alert> */}
@@ -64,9 +66,10 @@ export default function Loginform() {
             <label html="email">Email</label>
             <input
             type="text"
+            name='email'
             className='form-control mt-1'
             placeholder="Enter Email"
-            onChange={handleInputchange}
+            onChange={handleInputChange}
             value={userFormData.email}
             required
             />
@@ -78,6 +81,7 @@ export default function Loginform() {
             <input
             type="password"
             className='form-control mt-1'
+            onChange={handleInputChange}
             placeholder="Your Password"
             name="password"
             value={userFormData.password}
@@ -85,6 +89,17 @@ export default function Loginform() {
             />
             {/* <Form.Control.Feedback type="invalid">Password is required!</Form.Control.Feedback> */}
           </div>
+
+          <div className='form-group mt-3'>
+            <Link to='/login/developer' >
+              <label>If you are a Developer click on the button below.</label>
+              <button  className='btn btn-primary'
+              type='button'>
+                Click here to log in as Developer!
+              </button>
+            </Link>
+          </div>
+
           <div className='d-grid gap-2 mt-3'>
             <button className="btn btn-primary"
             disabled={!(userFormData.email && userFormData.password)}
