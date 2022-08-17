@@ -23,3 +23,15 @@ export const CREATE_CLIENT = gql`
     }
   }
 `;
+
+export const CREATE_SUPPLIER = gql`
+  mutation CreateSupplier($input: createClientInput!) {
+    createSupplier(input: $input) {
+      token
+      supplier {
+        _id
+        username
+      }   
+    }
+  }
+`;
