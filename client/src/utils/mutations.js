@@ -4,7 +4,7 @@ export const LOGIN_CLIENT = gql`
   mutation LoginClient($email: String!, $password: String!) {
     loginClient(email: $email, password: $password) {
       token
-      user {
+      client {
         _id
         username 
       }
@@ -16,7 +16,7 @@ export const LOGIN_SUPPLIER = gql`
   mutation LoginSupplier($email: String!, $password: String!) {
     loginSupplier(email: $email, password: $password) {
       token
-      user {
+      supplier {
         _id
         username 
       }
@@ -37,7 +37,7 @@ export const CREATE_CLIENT = gql`
 `;
 
 export const CREATE_SUPPLIER = gql`
-  mutation CreateSupplier($input: createClientInput!) {
+  mutation CreateSupplier($input: createSupplierInput!) {
     createSupplier(input: $input) {
       token
       supplier {
