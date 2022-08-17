@@ -48,9 +48,9 @@ export default function Signupform() {
   // };
 
   return (
-
-
     <div className='Auth-form-container mt-3'>
+      
+      
       <form className="Auth-form" noValidate validated = {validated} onSubmit={HandleFormSubmit}>
         {/* <alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant ="danger">
           Something went wrong with your login credentials!
@@ -99,26 +99,29 @@ export default function Signupform() {
             {/* <Form.Control.Feedback type="invalid">Password is required!</Form.Control.Feedback> */}
           </div>
 
-          <div className='form-group mt-3'>
-            <label htmlFor="employee"> Check the box if you plan to offer your services!</label>
-            <input
-            type = "checkbox"
-            className='Checkbox'
-            name='employeeCheck'
-            /> 
-           
+          <div className="form-group mt-3">
+            <a href = "/signup/developer" >
+              <label>If you plan to offer your services click on the button below.</label>
+              <button  className="btn btn-primary"
+              type="button">
+                Click here to create a Developer Account!
+              </button>
+            </a>
           </div>
+       
 
           <div className='d-grid gap-2 mt-3'>
             <button className="btn btn-primary"
             disabled={!(userFormData.email && userFormData.password)}
             type="submit"
             variant="success">
-              Submit
+              Create Account
             </button>
           </div>
         </div>
       </form>
+
+      
     </div>
   )
 }
