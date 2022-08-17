@@ -11,3 +11,15 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const CREATE_CLIENT = gql`
+  mutation CreateClient($input: createClientInput!) {
+    createClient(input: $input) {
+      token
+      client {
+        _id
+        username
+      }   
+    }
+  }
+`;
