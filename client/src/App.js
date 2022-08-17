@@ -3,6 +3,7 @@ import './styles/styles.css'
 import Home from './Views/Home';
 import Loginform from './components/loginAndsignup/Loginform';
 import Signupform from './components/loginAndsignup/Signupform';
+import Developersignup from './components/loginAndsignup/Developersignup';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   ApolloClient,
@@ -11,6 +12,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+
 
 
 // Construct our main GraphQL API endpoint
@@ -47,6 +49,7 @@ export default function App() {
           <Route path="/" element= {<Home />} />
           <Route path ="/login" element = {<Loginform />} />
           <Route path ="/signup" element = {<Signupform />} />
+          <Route path ="/signup/developer" element = {<Developersignup />} />
         </Routes>
       </Router>
      </ApolloProvider>
