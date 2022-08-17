@@ -1,31 +1,62 @@
 :root{
     --background-header:#002B5B ;
     --hover-header-links: #8FE3CF;
+    --font-family-navbar:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
 }
 
 /*background for header*/
 #nav{
     background-color: var(--background-header);
-    min-height: 150px;
+    min-height: 120px;
 }
+
 /*color links*/
 .navbar-links{
     color: white !important;
+    font-family: var(--font-family-navbar);
+    letter-spacing: 1px;
 }
 /*change link color when hover*/
 .navbar-links:hover{
     color: var(--hover-header-links) !important;
 }
 
+#banner{
+    margin-top: 120px;
+    max-width: 100%;
+    height: 80vh;
+    background-image: url(../images/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position:  0px -170px;
+}
+
+#banner #wrap{
+    max-width: 1000px;
+    height: 100%;
+}
+
+
+/*Container for search input*/
+.search-input-container{
+    background-color: #fff;
+}
+
 /*search input styles*/
 input[type=search]{
    outline: none;
-   min-height: 40px;
-   border-radius: 10px;
-   background-color: none;
+   min-height: 2.5rem;
+   min-width: 25rem !important;
+   border: none;
 }
-
-input[type=search]:focus {
-    background-color: lightblue;
-  }
-
+/*Search input from banner*/
+.search-button{
+    min-height: 40px;
+    border: none;
+    background-color: #1DBF73;
+}
+.search-button:hover{
+    /* box-shadow: 0px 0px 2px 2px var(--hover-header-links) inset; */
+    cursor: pointer;
+    background-color: #1ba162;
+}
