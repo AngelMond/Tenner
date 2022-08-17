@@ -37,8 +37,8 @@ const handleFormSubmit = async (event) => {
       variables: { input: userFormData }
     });
 
-    
-    Auth.login(data.createClient.token);
+    console.log(data);
+    Auth.login(data.createSupplier.token);
   } catch (err) {
     console.error(err);
     setShowAlert(true);
