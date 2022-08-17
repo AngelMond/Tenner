@@ -6,7 +6,6 @@ const typeDefs = gql`
         _id: ID!
         firstName: String
         lastName: String
-        age: Int
         username: String!
         email: String!
         password: String!
@@ -17,11 +16,18 @@ const typeDefs = gql`
         _id: ID!
         firstName: String
         lastName: String
-        age: Int
         username: String!
         email: String!
         password: String!
         role: String
+        card: [Card]
+    }
+
+    type Card {
+        _id: ID!
+        description: String
+        price: Int
+        image: String
     }
 
     type AuthClient {
@@ -45,22 +51,15 @@ const typeDefs = gql`
     }
 
     input createClientInput {
-        firstName: String!
-        lastName: String!
-        age: Int!
         username: String!
         email: String!
         password: String!
     }
 
     input createSupplierInput {
-        firstName: String!
-        lastName: String!
-        age: Int!
         username: String!
         email: String!
         password: String!
-        role: String!
     }
 
     type Mutation {
