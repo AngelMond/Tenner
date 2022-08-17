@@ -62,11 +62,20 @@ const typeDefs = gql`
         password: String!
     }
 
+    input cardInput{
+        _id: ID
+        description: String
+        price: Int
+        image: String
+    }
+
     type Mutation {
         loginClient(email: String! password: String!):AuthClient
         createClient(input: createClientInput!):AuthClient
         loginSupplier(email: String! password: String!):AuthSupplier
         createSupplier(input: createSupplierInput!): AuthSupplier
+        addCardSupplier(input: cardInput!):Supplier
+        removeCard(_id: ID!):Supplier
     }
 `;
 
