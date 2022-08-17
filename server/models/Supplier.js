@@ -6,16 +6,10 @@ const cardSchema  = require('./Card');
 const supplierSchema = new Schema(
   {
     firstName: {
-      type: String,
-      required: true
+      type: String
     },
     lastName: {
-      type: String,
-      required: true
-    },
-    age: {
-      type: Number,
-      required: true,
+      type: String
     },
     username: {
       type: String,
@@ -33,8 +27,7 @@ const supplierSchema = new Schema(
       required: true,
     },
     role: {
-      type: String,
-      required: true,
+      type: String
     },
     card: [ cardSchema ]
   },
