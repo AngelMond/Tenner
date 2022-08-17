@@ -43,13 +43,13 @@ export default function Header() {
                         {/* <!--Navbar--> */}
                         <div className='row  collapse navbar-collapse' id='navbar-container'>
                             <ul className='col-12 col-sm-6 col-md-3 navbar-nav fs-3 '>
-                                <li className='nav-item'><Link href='/' className='navbar-links nav-link fs-4'>Home</Link></li>
+                                <li className='nav-item'><Link to='/' className='navbar-links nav-link fs-4'>Home</Link></li>
                                 {Auth.loggedIn() ? (
-                                    <li className='nav-item'><Link href='/' className='navbar-links nav-link fs-4'>Log Out</Link></li>
+                                    <li className='nav-item'><Link to='/' onClick={Auth.logout} className='navbar-links nav-link fs-4'>Log Out</Link></li>
                                 ) : (
                                     <>
-                                    <li className='nav-item'><Link href='/login' className='navbar-links nav-link fs-4'>Login</Link></li>
-                                    <li className='nav-item'><Link href='/signup' className='navbar-links nav-link fs-4'>Sign-Up</Link></li>
+                                    <li className='nav-item'><Link to='/login' className='navbar-links nav-link fs-4'>Login</Link></li>
+                                    <li className='nav-item'><Link to='/signup' className='navbar-links nav-link fs-4'>Sign-Up</Link></li>
                                     </>
                                 )}
                             </ul>
