@@ -1,18 +1,17 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const cardSchema  = require('./Card');
 
 
 const supplierSchema = new Schema(
   {
     firstName: {
       type: String,
-      required: true,
-      unique: true,
+      required: true
     },
     lastName: {
       type: String,
-      required: true,
-      unique: true,
+      required: true
     },
     age: {
       type: Number,
@@ -34,9 +33,10 @@ const supplierSchema = new Schema(
       required: true,
     },
     role: {
-        type: String,
-        required: true,
-    }
+      type: String,
+      required: true,
+    },
+    card: [ cardSchema ]
   },
   // set this to use virtual below
   {
@@ -60,6 +60,10 @@ supplierSchema.pre('save', async function (next) {
   supplierSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
   };
+
+  supplierSchema.virtual('cardCount').get(function () {
+    return this.card.length;
+  });
 
 const Supplier = model('Supplier', supplierSchema);
 

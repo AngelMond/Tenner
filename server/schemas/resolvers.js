@@ -4,12 +4,13 @@ const { AuthenticationError } = require('apollo-server-express');
 
 const resolvers = {
     Query: {
-        me: async () => {
+        meClient: async (parent, args, context) => {
+            console.log(context.client)
             if(context.client){
                 return Client.findOne({ _id: context.client._id });
             }
 
-            throw new AuthenticationError('Client not found');
+            throw new AuthenticationError('Account not found');
         },
         clients: async () => {
             return await Client.find({});
@@ -20,6 +21,15 @@ const resolvers = {
 
             return client;
         },
+        meSupplier: async (parent, args, context) => {
+            console.log(context.supplier);
+
+            if(context.supplier){
+                return Supplier.findOne({ _id: context.supplier._id });
+            }
+
+            throw new AuthenticationError('Account not found');
+        },
         suppliers: async () => {
             return await Supplier.find({});
         },
@@ -28,15 +38,6 @@ const resolvers = {
             const supplier = await Supplier.findById({_id});
 
             return supplier;
-        },
-        images: () => {
-            return imagesList;
-        },
-        image: (parent, args) => {
-            const id = args.id;
-            const image = _.find(imagesList, {id: Number(id)});
-
-            return image;
         }
     },
     Client: {
@@ -57,11 +58,11 @@ const resolvers = {
         createSupplier: async (parent, args) => {
             const {input} = args;
             const supplier = await Supplier.create(input);
-            // const token = signToken(user);
+            const token = signToken(supplier);
 
-            return supplier;
+            return {token, supplier};
         },
-        login: async (parent, {email, password}) => {
+        loginClient: async (parent, {email, password}) => {
             const client = await Client.findOne({email});
 
             if(!client){
@@ -78,6 +79,23 @@ const resolvers = {
 
             return {token, client};
         },
+        loginSupplier: async (parent, {email, password}) => {
+            const supplier = await Supplier.findOne({email});
+
+            if(!supplier){
+                throw new AuthenticationError('No user found with this email address');
+            }
+
+            const correctPw = await supplier.isCorrectPassword(password);
+
+            if(!correctPw){
+                throw new AuthenticationError('Invalid Password');
+            }
+
+            const token = signToken(supplier);
+
+            return {token, supplier};
+        }
     }
 }
 
