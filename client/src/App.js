@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/styles.css'
 import Home from './Views/Home';
+import Header from './components/header/Header';
 import Loginform from './components/loginAndsignup/Loginform';
 import Signupform from './components/loginAndsignup/Signupform';
 import Developersignup from './components/loginAndsignup/Developersignup';
@@ -44,7 +45,7 @@ export default function App() {
     <>
     <ApolloProvider client={client}>
       <Router>
-      {/* <Header /> */}
+      <Header /> 
         <Routes>
           <Route path="/" element= {<Home />} />
           <Route path ="/login" element = {<Loginform />} />
