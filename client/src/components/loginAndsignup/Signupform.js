@@ -1,58 +1,62 @@
-import React from 'react'
-import "./SignupAndLogin.css"
-import { useState } from "react"
-// import { Form, Button, Alert } from "react-bootstrap";
-// // import Auth from "../utils/mutations";
-// import{ useMutation } from "@apollo/client"
+import React from 'react';
+import './SignupAndLogin.css';
+import { useState } from 'react';
+import Auth from '../../utils/auth';
+import{ useMutation } from '@apollo/client';
+import { CREATE_CLIENT } from '../../utils/mutations';
 
 export default function Signupform() {
 
-  // const LOGIN_USER = "loginUser";
-
-  const [userFormData, setUserFormData] = useState({ email: "", password: ""});
+  // set initial form state
+  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+  // set state for form validation
   const [validated] = useState(false);
-  const[showAlert, setShowAlert] = useState(false);
+  // set state for alert
+  const [showAlert, setShowAlert] = useState(false);
 
-  // const[loginUser, {error, data}] = useMutation(LOGIN_USER);
+  const [createClient, {error, data}] = useMutation(CREATE_CLIENT);
 
-  const handleInputchange = (event) => {
-    const { name, value } = event.target;
-    setUserFormData({...userFormData, [name]: value });
+  const handleInputChange = (event) => {
+    const { name, value } = event.currentTarget;
+    setUserFormData({ ...userFormData, [name]: value });
   };
 
-  const HandleFormSubmit = ""
-  //   event.preventDefault();
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
 
-  //   const form = event.currentTarget;
-  //   if (form.checkValidity() === false) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //   }
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
 
-  //   try {
-  //     const { data } = await loginUser({
-  //       variables: userFormData
-  //     });
+    try {
 
-  //     Auth.login(data.login.token);
-  //   } catch (err) {
-  //     console.log(err);
-  //     setShowAlert(true);
-  //   }
+      const {data} = await createClient({
+        variables: { input: userFormData }
+      });
 
-  //   setUserFormData({
-  //     username:"",
-  //     email:"",
-  //     password:"",
-  //   });
-  // };
+      
+      Auth.login(data.createClient.token);
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true);
+    }
+
+    setUserFormData({
+      username: '',
+      email: '',
+      password: '',
+    });
+  };
 
   return (
     <div className='Auth-form-container mt-3'>
       
       
-      <form className="Auth-form" noValidate validated = {validated} onSubmit={HandleFormSubmit}>
-        {/* <alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant ="danger">
+      <form className='Auth-form' noValidate validated = {validated} onSubmit={handleFormSubmit}>
+        {/* <alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant ='danger'>
           Something went wrong with your login credentials!
         </alert> */}
 
@@ -60,50 +64,52 @@ export default function Signupform() {
 
           <h3 className='Auth-form-title'>Sign Up</h3>
 
-          <div className="form-group mt-3">
-            <label html="email">Username</label>
+          <div className='form-group mt-3'>
+            <label html='email'>Username</label>
             <input
-            type="text"
+            type='text'
+            name='username'
             className='form-control mt-1'
-            placeholder="Enter Username"
-            onChange={handleInputchange}
+            placeholder='Enter Username'
+            onChange={handleInputChange}
+            value={userFormData.username}
+            required
+            />
+            {/* <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback> */}
+          </div>
+
+          <div className='form-group mt-3'>
+            <label html='email'>Email</label>
+            <input
+            type='text'
+            name='email'
+            className='form-control mt-1'
+            placeholder='Enter Email'
+            onChange={handleInputChange}
             value={userFormData.email}
             required
             />
-            {/* <Form.Control.Feedback type="invalid">Email is required!</Form.Control.Feedback> */}
+            {/* <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback> */}
           </div>
 
-          <div className="form-group mt-3">
-            <label html="email">Email</label>
+          <div className='form-group mt-3'>
+            <label htmlFor='password'>Password</label>
             <input
-            type="text"
+            type='password'
             className='form-control mt-1'
-            placeholder="Enter Email"
-            onChange={handleInputchange}
-            value={userFormData.email}
-            required
-            />
-            {/* <Form.Control.Feedback type="invalid">Email is required!</Form.Control.Feedback> */}
-          </div>
-
-          <div className="form-group mt-3">
-            <label htmlFor="password">Password</label>
-            <input
-            type="password"
-            className='form-control mt-1'
-            placeholder="Your Password"
-            name="password"
+            placeholder='Your Password'
+            name='password'
             value={userFormData.password}
             required
             />
-            {/* <Form.Control.Feedback type="invalid">Password is required!</Form.Control.Feedback> */}
+            {/* <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback> */}
           </div>
 
-          <div className="form-group mt-3">
-            <a href = "/signup/developer" >
+          <div className='form-group mt-3'>
+            <a href = '/signup/developer' >
               <label>If you plan to offer your services click on the button below.</label>
-              <button  className="btn btn-primary"
-              type="button">
+              <button  className='btn btn-primary'
+              type='button'>
                 Click here to create a Developer Account!
               </button>
             </a>
@@ -111,10 +117,10 @@ export default function Signupform() {
        
 
           <div className='d-grid gap-2 mt-3'>
-            <button className="btn btn-primary"
-            disabled={!(userFormData.email && userFormData.password)}
-            type="submit"
-            variant="success">
+            <button className='btn btn-primary'
+            disabled={!(userFormData.email && userFormData.password && userFormData.username)}
+            type='submit'
+            variant='success'>
               Create Account
             </button>
           </div>
