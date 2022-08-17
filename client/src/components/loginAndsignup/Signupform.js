@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './SignupAndLogin.css';
 import { useState } from 'react';
 import Auth from '../../utils/auth';
@@ -107,13 +108,13 @@ export default function Signupform() {
           </div>
 
           <div className='form-group mt-3'>
-            <a href = '/signup/developer' >
+            <Link to='/signup/developer' >
               <label>If you plan to offer your services click on the button below.</label>
               <button  className='btn btn-primary'
               type='button'>
                 Click here to create a Developer Account!
               </button>
-            </a>
+            </Link>
           </div>
        
 
