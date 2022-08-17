@@ -1,9 +1,9 @@
 import React from 'react'
 import "./SignupAndLogin.css"
 import { useState } from "react"
-// import { Form, Button, Alert } from "react-bootstrap";
-// // import Auth from "../utils/mutations";
-// import{ useMutation } from "@apollo/client"
+import Auth from "../../utils/mutations";
+import{ useMutation } from "@apollo/client"
+
 
 export default function Loginform() {
 
