@@ -1,57 +1,62 @@
-import React from 'react'
-import "./SignupAndLogin.css"
-import { useState } from "react"
-// import { Form, Button, Alert } from "react-bootstrap";
-// // import Auth from "../utils/mutations";
-// import{ useMutation } from "@apollo/client"
+import React from 'react';
+import './SignupAndLogin.css';
+import { useState } from 'react';
+import Auth from '../../utils/auth';
+import{ useMutation } from '@apollo/client';
+import { CREATE_SUPPLIER } from '../../utils/mutations';
 
 export default function Developersignup() {
 
-  // const LOGIN_USER = "loginUser";
+// set initial form state
+const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+// set state for form validation
+const [validated] = useState(false);
+// set state for alert
+const [showAlert, setShowAlert] = useState(false);
 
-  const [userFormData, setUserFormData] = useState({ email: "", password: ""});
-  const [validated] = useState(false);
-  const[showAlert, setShowAlert] = useState(false);
+const [createSupplier, {error, data}] = useMutation(CREATE_SUPPLIER);
 
-  // const[loginUser, {error, data}] = useMutation(LOGIN_USER);
+const handleInputChange = (event) => {
+  const { name, value } = event.currentTarget;
+  setUserFormData({ ...userFormData, [name]: value });
+};
 
-  const handleInputchange = (event) => {
-    const { name, value } = event.target;
-    setUserFormData({...userFormData, [name]: value });
-  };
+const handleFormSubmit = async (event) => {
+  event.preventDefault();
 
-  const HandleFormSubmit = ""
-  //   event.preventDefault();
+  // check if form has everything (as per react-bootstrap docs)
+  const form = event.currentTarget;
+  if (form.checkValidity() === false) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
 
-  //   const form = event.currentTarget;
-  //   if (form.checkValidity() === false) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //   }
+  try {
 
-  //   try {
-  //     const { data } = await loginUser({
-  //       variables: userFormData
-  //     });
+    const {data} = await createSupplier({
+      variables: { input: userFormData }
+    });
 
-  //     Auth.login(data.login.token);
-  //   } catch (err) {
-  //     console.log(err);
-  //     setShowAlert(true);
-  //   }
+    
+    Auth.login(data.createClient.token);
+  } catch (err) {
+    console.error(err);
+    setShowAlert(true);
+  }
 
-  //   setUserFormData({
-  //     username:"",
-  //     email:"",
-  //     password:"",
-  //   });
-  // };
+  setUserFormData({
+    username: '',
+    email: '',
+    password: '',
+  });
+};
+
 
   return (
 
 
     <div className='Auth-form-container mt-3'>
-      <form className="Auth-form" noValidate validated = {validated} onSubmit={HandleFormSubmit}>
+      <form className="Auth-form" onSubmit={handleFormSubmit}>
         {/* <alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant ="danger">
           Something went wrong with your login credentials!
         </alert> */}
@@ -61,13 +66,14 @@ export default function Developersignup() {
           <h3 className='Auth-form-title'>Developer Sign Up</h3>
 
           <div className="form-group mt-3">
-            <label html="email">Username</label>
+            <label html="username">Username</label>
             <input
             type="text"
+            name='username'
             className='form-control mt-1'
             placeholder="Enter Username"
-            onChange={handleInputchange}
-            value={userFormData.email}
+            onChange={handleInputChange}
+            value={userFormData.username}
             required
             />
             {/* <Form.Control.Feedback type="invalid">Email is required!</Form.Control.Feedback> */}
@@ -77,9 +83,10 @@ export default function Developersignup() {
             <label html="email">Email</label>
             <input
             type="text"
+            name='email'
             className='form-control mt-1'
             placeholder="Enter Email"
-            onChange={handleInputchange}
+            onChange={handleInputChange}
             value={userFormData.email}
             required
             />
@@ -91,6 +98,7 @@ export default function Developersignup() {
             <input
             type="password"
             className='form-control mt-1'
+            onChange={handleInputChange}
             placeholder="Your Password"
             name="password"
             value={userFormData.password}
@@ -103,7 +111,7 @@ export default function Developersignup() {
 
           <div className='d-grid gap-2 mt-3'>
             <button className="btn btn-primary"
-            disabled={!(userFormData.email && userFormData.password)}
+            disabled={!(userFormData.email && userFormData.password && userFormData.username)}
             type="submit"
             variant="success">
               Submit
