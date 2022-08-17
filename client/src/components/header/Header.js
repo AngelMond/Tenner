@@ -1,24 +1,28 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Auth from '../../utils/auth';
+
 export default function Header() {
     return (
 
-        <header class="row">
-            <nav id='nav' class="navbar navbar-expand-sm fixed-top justify-content-center">
-                <div class="container row d-flex flex-wrap  justify-content-between">  {/* <!--div centrado centrar contenido dentro --> */}
+        <header className='row'>
+            <nav id='nav' className='navbar navbar-expand-sm fixed-top justify-content-center'>
+                <div className='container row d-flex flex-wrap  justify-content-between'>  {/* <!--div centrado centrar contenido dentro --> */}
                     <div className='col-2'>
                         {/* <!--LOGO Tenner--> */}
-                        <a href="/" id="logo-tenner" class="navbar-links fs-1 fw-bold navbar-brand col-auto">Tenner</a>
+                        <a href="/" id="logo-tenner" className="navbar-links fs-1 fw-bold navbar-brand col-auto">Tenner</a>
                         
                         {/* <!--Button to collapse navbar--> */}
                         <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbar-container"
-                            aria-controls="navbar-container"
-                            aria-expanded="false"
-                            aria-label="show / hide navbar-container"
+                            className='navbar-toggler'
+                            type='button'
+                            data-bs-toggle='collapse'
+                            data-bs-target='#navbar-container'
+                            aria-controls='navbar-container'
+                            aria-expanded='false'
+                            aria-label='show / hide navbar-container'
                         >
-                            <span class="navbar-toggler-icon"></span>
+                            <span className='navbar-toggler-icon'></span>
                         </button>
                     </div>
 
@@ -37,11 +41,17 @@ export default function Header() {
 
                     <div className='col-auto'>
                         {/* <!--Navbar--> */}
-                        <div class="row  collapse navbar-collapse" id="navbar-container">
-                            <ul class="col-12 col-sm-6 col-md-3 navbar-nav fs-3 ">
-                                <li class="nav-item"><a href='/home' class="navbar-links nav-link fs-4">Home</a></li>
-                                <li class="nav-item"><a href='/login' class="navbar-links nav-link fs-4">Login</a></li>
-                                <li class="nav-item"><a href='/signup' class="navbar-links nav-link fs-4">Sign-Up</a></li>
+                        <div className='row  collapse navbar-collapse' id='navbar-container'>
+                            <ul className='col-12 col-sm-6 col-md-3 navbar-nav fs-3 '>
+                                <li className='nav-item'><Link href='/' className='navbar-links nav-link fs-4'>Home</Link></li>
+                                {Auth.loggedIn() ? (
+                                    <li className='nav-item'><Link href='/' className='navbar-links nav-link fs-4'>Log Out</Link></li>
+                                ) : (
+                                    <>
+                                    <li className='nav-item'><Link href='/login' className='navbar-links nav-link fs-4'>Login</Link></li>
+                                    <li className='nav-item'><Link href='/signup' className='navbar-links nav-link fs-4'>Sign-Up</Link></li>
+                                    </>
+                                )}
                             </ul>
                         </div>
                     </div>
