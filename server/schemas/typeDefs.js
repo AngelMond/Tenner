@@ -4,9 +4,9 @@ const typeDefs = gql`
 
     type Client {
         _id: ID!
-        firstName: String!
-        lastName: String!
-        age: Int!
+        firstName: String
+        lastName: String
+        age: Int
         username: String!
         email: String!
         password: String!
@@ -15,19 +15,13 @@ const typeDefs = gql`
 
     type Supplier {
         _id: ID!
-        firstName: String!
-        lastName: String!
-        age: Int!
+        firstName: String
+        lastName: String
+        age: Int
         username: String!
         email: String!
         password: String!
-        role: String!
-    }
-
-    type Images {
-        id: ID!
-        profile: String!
-        content: String!
+        role: String
     }
 
     type AuthClient {
@@ -42,13 +36,12 @@ const typeDefs = gql`
 
  
     type Query {
-        me: Client
+        meClient: Client
         clients: [Client!]!
         client(_id: ID!): Client!
+        meSupplier: Supplier
         suppliers: [Supplier!]!
         supplier(_id: ID!): Supplier!
-        images: [Images!]!
-        image(id: ID!): Images!
     }
 
     input createClientInput {
