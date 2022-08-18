@@ -30,6 +30,12 @@ export default function SupplierCard() {
     const handleStandardPrice = (e)=>{
         setStandarPrice(e.target.value);
     }
+    //Handle premium price
+    const [premiumPrice, setPremiumPrice] = useState();
+    const handlePremiumPrice = (e)=>{
+        setPremiumPrice(e.target.value);
+    }
+
     
     
 
