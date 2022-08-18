@@ -5,8 +5,9 @@ const { AuthenticationError } = require('apollo-server-express');
 const resolvers = {
     Query: {
         meClient: async (parent, args, context) => {
-            console.log(context.client)
+    
             if(context.client){
+        
                 return Client.findOne({ _id: context.client._id });
             }
 
