@@ -1,6 +1,7 @@
 import './UserProfile.css';
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/esm/Container";
+import { Link } from 'react-router-dom';
 
 
 
@@ -67,13 +68,22 @@ export default function DeveloperDashboard() {
 
     return (
         <div>
-          <div className="cardContainer text-center">
-            <h1 className="">Your Dasboard</h1>
-          </div>
+            <div className="cardContainer text-center">
+                <h1 className="">Your Dasboard</h1>
+                <div className='form-group mt-3'>
+                    <Link to='/signup/developer' >
+                        <button  className='btn btn-primary'
+                        type='button'>
+                            New service listing +
+                        </button>
+                    </Link>
+                </div>
+            </div>
 
-          <div className="d-flex flex-wrap mt-5 container">
-            {cardInfo.map(renderCard)}
-          </div>
+            <div className="d-flex flex-wrap mt-5 container">
+                {cardInfo.map(renderCard)}
+            </div>
         </div>
+    
       );
 }
