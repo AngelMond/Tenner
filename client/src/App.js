@@ -8,6 +8,7 @@ import Developersignup from './components/loginAndsignup/Developersignup';
 import Developerlogin from './components/loginAndsignup/Developerlogin';
 import ClientHomepage from './components/userProfile/ClientHomepage';
 import DeveloperDashboard from './components/userProfile/DeveloperDashboard';
+import SupplierCard from './components/createSupplierCard/SupplierCard'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   ApolloClient,
@@ -62,7 +63,7 @@ export default function App() {
           <Route path ="/client/homepage" element = {<ClientHomepage />} />
           <Route path ="/developer/dashboard" element = {<DeveloperDashboard /> } />
 
-          <Route path='/login/developer/description' element={<CardDescription/>}/>
+          <Route path='/login/developer/description' element={<SupplierCard/>}/>
           {/* <Route path='/login/developer/description/test' element={<UserProfile/>}/> */}
 
           
