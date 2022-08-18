@@ -103,7 +103,9 @@ export default function SupplierCard() {
                                     <label className="col-12 py-2 fs-5" htmlFor="price">Or add your favorite image url</label>
                                     <input onChange={handleUrlImage} value={urlImage} className="col-12 form-control" name="price" type="" placeholder="url..." />
                                 </div>
-
+                            </div>
+                            <div className="row g-0 mb-3 mt-5 justify-content-center">
+                                    <button className="btn btn-success submitButton col-12 col-md-8 col-lg-4 mt-4" type="submit">Submit</button> 
                             </div>
                         </div>
                     </form>
