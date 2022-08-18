@@ -14,7 +14,7 @@ export default function FooterContainer() {
                 <Footer.Row>
                 <Footer.Column>
                     <Footer.Title>About us</Footer.Title>
-                    <p>Tanner es una empresa que busca acercar a los clientes y provedores de una manera ágil y sencilla</p>
+                    <p>Tenner es una empresa que busca acercar a los clientes y provedores de una manera ágil y sencilla</p>
                 </Footer.Column>
                 <Footer.Column>
                     <Footer.Title>Social</Footer.Title>

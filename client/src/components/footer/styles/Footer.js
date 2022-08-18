@@ -26,7 +26,7 @@ grid-gap: 200px;
 `
 export const Link = styled.a`
 color: #fff;
-margin-bottom: 0px;
+margin-bottom: 5px;
 font-size: 18px;
 text-decoration: none;
 
