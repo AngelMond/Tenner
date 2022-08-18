@@ -2,7 +2,7 @@ import React from 'react'
 import './chat.css'
 import Conversation from '../conversations/Conversation'
 import Message from '../message/Message'
-import ChatOnline from '../chatOnline/ChatOnline'
+/*import ChatOnline from '../chatOnline/ChatOnline'*/
 import { useContext, useState } from 'react'
 import { useEffect } from 'react'
 import {AuthContext} from ''
@@ -154,13 +154,11 @@ export default function Chat() {
                 </span> )}
             </div>
         </div>
-        <div className="chatonline">
-            <div className="chatonlineWrapper">
-                <ChatOnline/>
-                <ChatOnline/>
-                <ChatOnline/>
-            </div>
-        </div>
+         {/*<div className="chatonline">
+           <div className="chatonlineWrapper">
+                <ChatOnline onlineUsers={onlineUsers} currentId={user.id} setCurrentChat={setCurrentChat}/>
+                </div>
+        </div>*/}
     </div>
   )
 }
