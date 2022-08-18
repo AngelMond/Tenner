@@ -71,7 +71,7 @@ export default function DeveloperDashboard() {
             <div className="cardContainer text-center">
                 <h1 className="">Your Dasboard</h1>
                 <div className='form-group mt-3'>
-                    <Link to='/signup/developer' >
+                    <Link to='/login/developer/description' >
                         <button  className='btn btn-primary'
                         type='button'>
                             New service listing +
