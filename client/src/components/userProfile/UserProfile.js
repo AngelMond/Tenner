@@ -12,10 +12,40 @@ export default function UserProfile() {
 
     const cardInfo = [
         {
-          image: user1,
+          image: "./images/user-2",
           username: "Chris Nunez",
           description: "I will design your website in three days.",
           price: 10,
+        },
+        {
+          image: "./images/user-3",
+          username: "Ángel Mondragón",
+          description: "I will do mern stack website as mern stack developer",
+          price: 12,
+        },
+        {
+          image: "./images/user-4",
+          username: "Jessica Smith",
+          description: "I will develop responsive front end website with bootstrap",
+          price: 15,
+        },
+        {
+          image: "./images/user-5",
+          username: "Anica Miller",
+          description: "I will use HTML, CSS, ReactJS to create high quality website design",
+          price: 13,
+        },
+        {
+          image: "./images/user-6",
+          username: "Jorge Cárdenas",
+          description: "I will be your website developer in React JS",
+          price: 11,
+        },
+        {
+          image: "./images/user-7",
+          username: "Anne Johnson",
+          description: "I will be your front end web developer using HTML, CSS, JS and Bootstrap.",
+          price: 16,
         },
   
         //start here
