@@ -17,7 +17,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import CardDescription from './components/cardDescriptionForm/cardDescriptionForm';
-import UserProfile from './components/userProfile/UserProfile';
+// import UserProfile from './components/userProfile/UserProfile';
 
 
 
@@ -63,7 +63,7 @@ export default function App() {
           <Route path ="/developer/dashboard" element = {<DeveloperDashboard /> } />
 
           <Route path='/login/developer/description' element={<CardDescription/>}/>
-          <Route path='/login/developer/description/test' element={<UserProfile/>}/>
+          {/* <Route path='/login/developer/description/test' element={<UserProfile/>}/> */}
 
           
     
