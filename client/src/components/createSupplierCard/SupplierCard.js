@@ -25,6 +25,12 @@ export default function SupplierCard() {
     const handleBasicPrice = (e)=>{
         setBasicPrice(e.target.value);
     }
+    //Handle standard price
+    const [standard, setStandarPrice] = useState();
+    const handleStandardPrice = (e)=>{
+        setStandarPrice(e.target.value);
+    }
+    
     
 
     return (
