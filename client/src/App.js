@@ -16,6 +16,9 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import CardDescription from './components/cardDescriptionForm/cardDescriptionForm';
+import UserProfile from './components/userProfile/UserProfile';
+
 
 
 
@@ -55,8 +58,15 @@ export default function App() {
           <Route path ="/signup" element = {<Signupform />} />
           <Route path ="/signup/developer" element = {<Developersignup />} />
           <Route path='/login/developer' element={<Developerlogin/>}/>
+
           <Route path ="/client/homepage" element = {<ClientHomepage />} />
           <Route path ="/developer/dashboard" element = {<DeveloperDashboard /> } />
+
+          <Route path='/login/developer/description' element={<CardDescription/>}/>
+          <Route path='/login/developer/description/test' element={<UserProfile/>}/>
+
+          
+    
         </Routes>
       </Router>
      </ApolloProvider>

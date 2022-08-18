@@ -19,6 +19,26 @@ export default function DeveloperDashboard() {
           description: "I will design your website in three days.",
           price: 10,
         },
+        {
+          image: user1,
+          username: "Chris Nunez",
+          description: "I will design your website in three days.",
+          price: 10,
+        },
+        {
+          image: user1,
+          username: "Chris Nunez",
+          description: "I will design your website in three days.",
+          price: 10,
+        },
+        {
+          image: user1,
+          username: "Chris Nunez",
+          description: "I will design your website in three days.",
+          price: 10,
+        },
+        
+        
   
         //start here
       ];
