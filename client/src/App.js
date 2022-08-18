@@ -6,6 +6,8 @@ import Loginform from './components/loginAndsignup/Loginform';
 import Signupform from './components/loginAndsignup/Signupform';
 import Developersignup from './components/loginAndsignup/Developersignup';
 import Developerlogin from './components/loginAndsignup/Developerlogin';
+import ClientHomepage from './components/userProfile/ClientHomepage';
+import DeveloperDashboard from './components/userProfile/DeveloperDashboard';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   ApolloClient,
@@ -53,6 +55,8 @@ export default function App() {
           <Route path ="/signup" element = {<Signupform />} />
           <Route path ="/signup/developer" element = {<Developersignup />} />
           <Route path='/login/developer' element={<Developerlogin/>}/>
+          <Route path ="/client/homepage" element = {<ClientHomepage />} />
+          <Route path ="/developer/dashboard" element = {<DeveloperDashboard /> } />
         </Routes>
       </Router>
      </ApolloProvider>
