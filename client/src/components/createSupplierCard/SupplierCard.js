@@ -14,6 +14,13 @@ export default function SupplierCard() {
         inputFile.click();
     }
 
+    //Handle Role
+    const [ selectRole, setSelectRole] = useState();
+    const handleRole = (e)=>{
+        setSelectRole(e.target.value);
+        console.log(e.target.value);
+    }
+
     //Handle Description Input
     const [description, setDescription] = useState("");
     const handleInputDescription = (e)=>{
@@ -51,15 +58,16 @@ export default function SupplierCard() {
                         <div className="col-12 col-md-8 col-lg-8 px-4 m-4 border rounded shadow">
                             <h4 className="text-center p-4 fw-bold fs-2">Create your presentation card</h4>
                             <div className="input-group row g-0 mb-3">
-                                <select className="form-select" aria-label="Default select example">
-                                    <option defaultValue value="0">FullStack</option>
-                                    <option value="1">FrontEnd</option>
-                                    <option value="2">BackEnd</option>
-                                    <option value="3">Graphic Design</option>
-                                    <option value="4">Scrum Master</option>
-                                    <option value="5">DBA</option>
-                                    <option value="6">IOS</option>
-                                    <option value="7">Android</option>
+                                <select onChange={handleRole} value={selectRole} className="form-select" aria-label="Default select example">
+                                    <option defaultValue value="0">Select your role</option>
+                                    <option value="FullStack">FullStack</option>
+                                    <option value="FrontEnd">FrontEnd</option>
+                                    <option value="BackEnd">BackEnd</option>
+                                    <option value="GraphicDesign">Graphic Design</option>
+                                    <option value="ScrumMaster">Scrum Master</option>
+                                    <option value="DBA">DBA</option>
+                                    <option value="IOS">IOS</option>
+                                    <option value="Android">Android</option>
                                 </select>
                             </div>
                             <div className="input-group row g-0 mb-3">
