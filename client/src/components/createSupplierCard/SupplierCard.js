@@ -20,6 +20,11 @@ export default function SupplierCard() {
         setDescription(e.target.value)
     }
 
+    //Handle basic price
+    const [basicPrice, setBasicPrice] = useState();
+    const handleBasicPrice = (e)=>{
+        setBasicPrice(e.target.value);
+    }
     
 
     return (
