@@ -13,9 +13,11 @@ const resolvers = {
             throw new AuthenticationError('Account not found');
         },
         clients: async () => {
+
             return await Client.find({});
         },
         client: async (parent, args) => {
+
             const {_id} = args;
             const client = await Client.findById({_id});
 
@@ -95,7 +97,43 @@ const resolvers = {
             const token = signToken(supplier);
 
             return {token, supplier};
+        },
+        addCardSupplier: async (parent, args, context)=>{
+            
+            const { input } = args;
+
+            if(context.supplier) {
+
+                const addCard = await Supplier.findOneAndUpdate(
+                    {_id: context.supplier._id},
+                    {$addToSet: { card: input }},
+                    { new: true, runValidators: true }
+                );
+
+                return addCard;
+            }
+
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        removeCard: async (parent, args, context) => {
+
+            const {_id} = args;
+
+            if(context.supplier){
+
+                const deleteCard = await Supplier.findOneAndUpdate(
+                    {_id: context.supplier._id},
+                    {$pull: { card: _id}},
+                    { new: true, runValidators: true }
+                );
+
+                return deleteCard;
+            }
+
+            throw new AuthenticationError('You need to be logged in!');
+
         }
+        
     }
 }
 

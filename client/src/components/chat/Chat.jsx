@@ -2,7 +2,7 @@
 // import './chat.css'
 // import Conversation from '../conversations/Conversation'
 // import Message from '../message/Message'
-// import ChatOnline from '../chatOnline/ChatOnline'
+// {/*import ChatOnline from '../chatOnline/ChatOnline'*/}
 // import { useContext, useState } from 'react'
 // import { useEffect } from 'react'
 // import {AuthContext} from ''
@@ -20,7 +20,6 @@
 //     const [newMessage, setNewMessage] = useState("");
 //     const [arrivalMessage, setArrivalMessage] = useState(null);
 //     const [onlineUsers, setOnlineUsers] = useState([]);
-//     {/* AuthContext te trae toda la informacion de usuario min 48*/}
 //     const {user} = useContext (AuthContext);
 //     const scrollRef = useRef();
 //     const socket = useRef();
@@ -154,13 +153,13 @@
 //                 </span> )}
 //             </div>
 //         </div>
-//         <div className="chatonline">
+//         {/*<div className="chatonline">
 //             <div className="chatonlineWrapper">
 //                 <ChatOnline/>
 //                 <ChatOnline/>
 //                 <ChatOnline/>
 //             </div>
-//         </div>
+//         </div>*/}
 //     </div>
 //   )
 // }

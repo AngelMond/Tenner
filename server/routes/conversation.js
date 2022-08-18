@@ -16,7 +16,6 @@ router.post ("/", async (req,res) => {
         res.status(500).json(err)
     }
 
-    //En la base de mongo necesito que los usuarios tengan un ID
 });
 
 //Get conversation
