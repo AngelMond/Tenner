@@ -35,7 +35,11 @@ export default function SupplierCard() {
     const handlePremiumPrice = (e)=>{
         setPremiumPrice(e.target.value);
     }
-
+    //Handle url image
+    const [ urlImage, setUrlImage] = useState();
+    const handleUrlImage = (e)=>{
+        setUrlImage(e.target.value);
+    }
     
     
 
