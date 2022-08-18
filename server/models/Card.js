@@ -9,7 +9,7 @@ const cardSchema = new Schema(
     description: {
         type: String
     },
-    basicCrice: {
+    basicPrice: {
         type: Number
     },
     standardPrice: {
