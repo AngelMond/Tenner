@@ -49,12 +49,23 @@ export default function SupplierCard() {
     const handleUrlImage = (e)=>{
         setUrlImage(e.target.value);
     }
+
+    const [CreateCardSupplier, {error}] = useMutation(CREATE_CARDSUPPLIER)
     
     //HandleSubmitForm
-    const handleSumbitForm = async (e)=>{
+    const handleFormSubmit = async (e)=>{
         e.preventDefault();
 
         try{
+            await CreateCardSupplier({
+            variables:
+                selectRole,
+                description,
+                basicPrice,
+                standard,
+                premiumPrice,
+                urlImage
+            });
 
         }catch(err){
             console.log(err);
@@ -66,7 +77,7 @@ export default function SupplierCard() {
         <div className="container-fluid supplier-card-container">
             <div className="row justify-content-center p-4">
                 <div className=" p-3">
-                    <form onSubmit={handleSumbitForm} className="row justify-content-center">
+                    <form onSubmit={handleFormSubmit} className="row justify-content-center">
                         <div className="col-12 col-md-8 col-lg-8 px-4 m-4 border rounded shadow">
                             <h4 className="text-center p-4 fw-bold fs-2">Create your presentation card</h4>
                             <div className="input-group row g-0 mb-3">
