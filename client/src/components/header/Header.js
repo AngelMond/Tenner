@@ -49,7 +49,7 @@ export default function Header() {
                                 ) : (
                                     <>
                                     <li className='nav-item'><Link to='/login' className='navbar-links nav-link fs-4'>Login</Link></li>
-                                    <li className='nav-item'><Link to='/signup' className='navbar-links nav-link fs-4'>Sign-Up</Link></li>
+                                    <li className='nav-item'><Link to='/signup' className='navbar-links nav-link fs-4'>SignUp</Link></li>
                                     </>
                                 )}
                             </ul>
