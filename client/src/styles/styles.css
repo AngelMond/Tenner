@@ -79,8 +79,12 @@ input[type=search]{
 }
 
 /*This will be active when dragging files above the interface */
-.drag.area.active{
+.dragActive{
     background-color: #b8d4fe;
     color: black;
-    border: 2px dashed orange;
+    border: 2px dashed #002B5B;
+}
+
+#selectImageCardButton:hover {
+    cursor: pointer;
 }
