@@ -5,7 +5,7 @@ const db = require('./config/connection');
 const { authMiddleware } = require('./utils/auth');
 const app = express();
 const path = require('path');
-const { application } = require("express");
+//const { application } = require("express");
 const conversationRoute = require ("./routes/conversation");
 const messageRoute = require ("./routes/messages");
 
