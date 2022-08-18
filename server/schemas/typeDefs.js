@@ -19,14 +19,16 @@ const typeDefs = gql`
         username: String!
         email: String!
         password: String!
-        role: String
         card: [Card]
     }
 
     type Card {
         _id: ID!
+        role: String
         description: String
-        price: Int
+        basicPrice: Int
+        standardPrice: Int
+        premiumPrice: Int
         image: String
     }
 
@@ -63,9 +65,11 @@ const typeDefs = gql`
     }
 
     input cardInput{
-        _id: ID
+        role: String
         description: String
-        price: Int
+        basicPrice: Int
+        standardPrice: Int
+        premiumPrice: Int
         image: String
     }
 

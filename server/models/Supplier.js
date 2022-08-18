@@ -26,9 +26,6 @@ const supplierSchema = new Schema(
       type: String,
       required: true,
     },
-    role: {
-      type: String
-    },
     card: [ cardSchema ]
   },
   // set this to use virtual below
