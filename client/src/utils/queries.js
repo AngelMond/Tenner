@@ -17,6 +17,10 @@ export const ME_SUPPLIER = gql`
             _id
             username
             email
+            card {
+                _id
+                image
+            }
         }
     }
 `;
