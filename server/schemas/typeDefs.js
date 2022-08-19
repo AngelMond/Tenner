@@ -23,7 +23,7 @@ const typeDefs = gql`
     }
 
     type Card {
-        _id: ID!
+        _id: ID
         role: String
         description: String
         basicPrice: Int

@@ -17,12 +17,8 @@ export const ME_SUPPLIER = gql`
             _id
             username
             email
-            card{
-                role
-                description
-                basicPrice
-                standardPrice
-                premiumPrice
+            card {
+                _id
                 image
             }
         }
