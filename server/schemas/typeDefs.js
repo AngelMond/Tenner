@@ -4,8 +4,6 @@ const typeDefs = gql`
 
     type Client {
         _id: ID!
-        firstName: String
-        lastName: String
         username: String!
         email: String!
         password: String!
@@ -14,8 +12,6 @@ const typeDefs = gql`
 
     type Supplier {
         _id: ID!
-        firstName: String
-        lastName: String
         username: String!
         email: String!
         password: String!
