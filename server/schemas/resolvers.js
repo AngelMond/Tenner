@@ -5,13 +5,10 @@ const { AuthenticationError } = require('apollo-server-express');
 const resolvers = {
     Query: {
         meClient: async (parent, args, context) => {
-
-            // console.log('context.client ',context.client)
-            // context.log('context.supplier ',context.supplier)
     
-            if(context.client){
+            if(context.user){
         
-                return Client.findOne({ _id: context.client._id });
+                return Client.findOne({ _id: context.user._id });
             }
 
             throw new AuthenticationError('Account not found');
@@ -28,10 +25,9 @@ const resolvers = {
             return client;
         },
         meSupplier: async (parent, args, context) => {
-            console.log(context.client);
 
-            if(context.client){
-                return Supplier.findOne({ _id: context.client._id });
+            if(context.user){
+                return Supplier.findOne({ _id: context.user._id });
             }
 
             throw new AuthenticationError('Account not found');
@@ -44,13 +40,6 @@ const resolvers = {
             const supplier = await Supplier.findById({_id});
 
             return supplier;
-        }
-    },
-    Client: {
-        suppliers: () => {
-            return _.filter(supplierList, (supplier) => {
-               return supplier.id >= 5
-            })
         }
     },
     Mutation: {
@@ -106,12 +95,12 @@ const resolvers = {
             
             const { input } = args;
 
-            console.log(context.client);
+            console.log(context.user);
 
-            if(context.client) {
+            if(context.user) {
 
                 const addCard = await Supplier.findOneAndUpdate(
-                    {_id: context.client._id},
+                    {_id: context.user._id},
                     {$addToSet: { card: input }},
                     { new: true, runValidators: true }
                 );
@@ -125,10 +114,10 @@ const resolvers = {
 
             const {_id} = args;
 
-            if(context.supplier){
+            if(context.user){
 
                 const deleteCard = await Supplier.findOneAndUpdate(
-                    {_id: context.supplier._id},
+                    {_id: context.user._id},
                     {$pull: { card: _id}},
                     { new: true, runValidators: true }
                 );
