@@ -5,12 +5,6 @@ const cardSchema  = require('./Card');
 
 const supplierSchema = new Schema(
   {
-    firstName: {
-      type: String
-    },
-    lastName: {
-      type: String
-    },
     username: {
       type: String,
       required: true,
