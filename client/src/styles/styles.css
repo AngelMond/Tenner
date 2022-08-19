@@ -21,6 +21,18 @@
     color: var(--hover-header-links) !important;
 }
 
+#logo-tenner{
+    text-decoration: none !important;
+}
+#logo-tenner:hover{
+    cursor: pointer;
+}
+
+.button-collapse{
+    color: white !important;
+    background-color: var(--hover-header-links)!important;
+}
+
 #banner{
     margin-top: 120px;
     max-width: 100%;
