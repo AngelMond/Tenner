@@ -48,3 +48,17 @@ export const CREATE_SUPPLIER = gql`
     }
   }
 `;
+
+export const ADD_CARD_SUPPLIER = gql`
+  mutation AddCardSupplier($input: cardInput!) {
+    addCardSupplier(input: $input) {
+      username
+      email
+      _id
+    }
+}
+`;
+
+export const REMOVE_CARD = gql`
+
+`;
