@@ -58,3 +58,9 @@ export const CREATE_CARDSUPPLIER =gql`
     }
   }
 `
+
+
+export const REMOVE_CARD = gql`
+
+`;
+

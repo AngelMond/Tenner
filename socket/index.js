@@ -1,6 +1,6 @@
 const io = require("socket.io")(8900, {
     cors: {
-      origin: "http://localhost:3000",
+      origin: "http://localhost:3001",
     },
   });
   
@@ -38,6 +38,8 @@ const io = require("socket.io")(8900, {
       });
     });
   
+
+    
     //when disconnect
     socket.on("disconnect", () => {
       console.log("a user disconnected!");

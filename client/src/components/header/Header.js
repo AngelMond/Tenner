@@ -1,8 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
+import { ME_CLIENT } from '../../utils/queries';
+import { useQuery } from '@apollo/client';
+
 
 export default function Header() {
+
+    const result = useQuery(ME_CLIENT);
+
+    console.log(result);
+
     return (
 
         <header className='row'>
