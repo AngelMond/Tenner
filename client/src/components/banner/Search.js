@@ -17,7 +17,7 @@ export default function Search() {
     }
   return (
     <form className='search-form col-auto h-100'>
-        <input onChange={handleInputChange} id='search-input' className='ps-3 pe-2 ms-2 border rounded-start' type='search' value={search} name='' placeholder='prueba' />
+        <input onChange={handleInputChange} id='search-input' className='ps-3 pe-2 ms-2 border rounded-start' type='search' value={search} name='' placeholder='search' />
         <button className='fw-bold px-3 h-100 search-button rounded-end text-white' type='submit'>
             Search
         </button>
