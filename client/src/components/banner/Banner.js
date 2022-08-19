@@ -59,7 +59,7 @@ export default function Banner() {
             <Card.Body>
               <Card.Title className='cardUsername pb-2'>{supplier.username}</Card.Title>
               <p>{card.description}</p>
-              <p className='mb-0'>From</p> <h1 className='mb-0 test'>${card.price}</h1>
+              <p className='mb-0'>From</p> <h1 className='mb-0 test'>${card.basicPrice}</h1>
             </Card.Body>
           </Card>
         </Container>
