@@ -38,6 +38,8 @@ const io = require("socket.io")(8900, {
       });
     });
   
+
+    
     //when disconnect
     socket.on("disconnect", () => {
       console.log("a user disconnected!");
