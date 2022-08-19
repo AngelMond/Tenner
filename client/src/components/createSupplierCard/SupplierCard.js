@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function SupplierCard() {
-    // let navigate = useNavigate();
+    let navigate = useNavigate();
 
     const [addCardSupplier, {error, data}] = useMutation(CREATE_CARDSUPPLIER);
 
@@ -40,10 +40,8 @@ export default function SupplierCard() {
         try{
             const {data} = await addCardSupplier({
             variables: {input: userFormData},
-            });
-            console.log('card created')
-            // navigate("/developer/dashboard", { replace: true });
-
+            });         
+            navigate("/developer/dashboard", { replace: true });
         }catch(err){
             console.log(err);
         }
