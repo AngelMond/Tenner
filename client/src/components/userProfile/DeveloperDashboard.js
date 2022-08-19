@@ -18,44 +18,36 @@ export default function DeveloperDashboard() {
 
   //Get supplier data to create presentation cards
   const { data } = useQuery(ME_SUPPLIER);
-  // console.log(data.meSupplier.card.lenght);
+  
+  //Store array of cards
+  let cardInfo = data.meSupplier.card; 
+
+  //Store supplier name
+  let username = data.meSupplier.username; 
 
 
-  const cardInfo = [
-    {
-      image: data.meSupplier.card[0].image,
-      username: data.meSupplier.username,
-      description: data.meSupplier.card[0].description,
-      price: data.meSupplier.card[0].basicPrice,
-    },
-  ];
-  // for(let i = 0; i< data.meSupplier.card.lenght ; i++){
-
-  // }
-
-  const renderCard = (card, index) => {
-    return (
-      <Container className="col-auto">
-        <Card
-          style={{ width: "18rem", height: "30rem" }}
-          key={index}
-          className="shadow-lg m-1 mb-5 text-center"
-        >
-          <a>
-            <Card.Img variant="top" src={card.image} />
-          </a>
-          <Card.Body>
-            <Card.Title className='cardUsername pb-2'>{card.username}</Card.Title>
-            <p>{card.description}</p>
-            <p className='mb-0'>From</p> 
-            <h1 className='mb-0 test'>${card.price}</h1>
-            <button className='mt-4 btn btn-danger'>Delete Srvice</button>
-          </Card.Body>
-        </Card>
-      </Container>
-    );
+  const renderCard = (cardInfo, ix) => {
+      return (
+        <Container className="col-auto">
+          <Card
+            style={{ width: "18rem", height: "30rem" }}
+            key={ix}
+            className="shadow-lg m-1 mb-5 text-center"
+          >
+            <a>
+              <Card.Img variant="top" src={cardInfo.image} />
+            </a>
+            <Card.Body>
+              <Card.Title className='cardUsername pb-2'>{username}</Card.Title>
+              <p>{cardInfo.description}</p>
+              <p className='mb-0'>From</p> 
+              <h1 className='mb-0 test'>${cardInfo.basicPrice}</h1>
+              <button className='mt-4 btn btn-danger'>Delete Service</button>
+            </Card.Body>
+          </Card>
+        </Container>
+      );
   };
-
 
   return (
     <div>

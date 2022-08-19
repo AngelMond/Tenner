@@ -41,7 +41,7 @@ export default function SupplierCard() {
             const {data} = await addCardSupplier({
             variables: {input: userFormData},
             });         
-            navigate("/developer/dashboard", { replace: true });
+             window.location.reload();
         }catch(err){
             console.log(err);
         }
@@ -51,7 +51,7 @@ export default function SupplierCard() {
             standardPrice: '',
             premiumPrice: '',
             image: '',
-          });
+          });          
     }
     
 
