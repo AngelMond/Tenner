@@ -29,3 +29,16 @@ export const ME_SUPPLIER = gql`
         }
     }
 `;
+
+export const SUPPLIERS = gql`
+    query Suppliers {
+        suppliers {
+        username
+        card {
+            description
+            basicPrice
+            image
+        }
+    }
+  }
+`;
