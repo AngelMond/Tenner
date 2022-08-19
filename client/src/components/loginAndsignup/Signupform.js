@@ -53,7 +53,7 @@ export default function Signupform() {
   };
 
   return (
-    <div className='Auth-form-container mt-3'>
+    <div className='Auth-form-container signup-component'>
       
       
       <form className='Auth-form' onSubmit={handleFormSubmit}>

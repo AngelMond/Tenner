@@ -52,7 +52,7 @@ export default function Loginform() {
   return (
 
 
-    <div className='Auth-form-container mt-3'>
+    <div className='Auth-form-container login-component'>
       <form className="Auth-form" noValidate validated = {validated} onSubmit={handleFormSubmit}>
         {/* <alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant ="danger">
           Something went wrong with your login credentials!
