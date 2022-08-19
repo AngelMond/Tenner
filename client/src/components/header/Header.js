@@ -39,8 +39,8 @@ export default function Header() {
 
 
                     {/* <!--Navbar--> */}
-                    <div className='col-7 border border-warning mt-3 row  collapse navbar-collapse' id='navbar-container'>
-                        <ul className='d-flex flex-wrap justify-content-end navbar-nav fs-3 text-center border border-danger'>
+                    <div className='col-7 p-2 mt-3 row  collapse navbar-collapse' id='navbar-container'>
+                        <ul className='d-flex flex-wrap justify-content-end navbar-nav fs-3 text-center'>
                             <li className='nav-item'><Link to='/' className='navbar-links nav-link fs-4'>Home</Link></li>
                             {Auth.loggedIn() ? (
                                 <>
