@@ -50,7 +50,7 @@ export const CREATE_SUPPLIER = gql`
 `;
 
 export const CREATE_CARDSUPPLIER =gql`
-  mutation addCardSupplier ($input: cardInput!){
+  mutation AddCardSupplier ($input: cardInput!){
     addCardSupplier(input: $input){
       _id
       username
@@ -60,7 +60,7 @@ export const CREATE_CARDSUPPLIER =gql`
 `
 
 
-export const REMOVE_CARD = gql`
+// export const REMOVE_CARD = gql`
 
-`;
+// `;
 

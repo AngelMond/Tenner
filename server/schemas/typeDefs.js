@@ -67,9 +67,9 @@ const typeDefs = gql`
     input cardInput{
         role: String
         description: String
-        basicPrice: Int
-        standardPrice: Int
-        premiumPrice: Int
+        basicPrice: String
+        standardPrice: String
+        premiumPrice: String
         image: String
     }
 
