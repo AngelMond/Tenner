@@ -2,14 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 import { ME_CLIENT } from '../../utils/queries';
+import { ME_SUPPLIER } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
 
 
 export default function Header() {
 
     const result = useQuery(ME_CLIENT);
+    const resultSupplier = useQuery(ME_SUPPLIER);
 
     console.log(result);
+    console.log(resultSupplier);
 
     return (
 
@@ -43,9 +46,10 @@ export default function Header() {
                                 <>
                                     <li className='nav-item'><Link to='/developer/dashboard' className='navbar-links nav-link fs-4'>Dashboard</Link></li>
                                     <li className='nav-item'><Link to='/' onClick={Auth.logout} className='navbar-links nav-link fs-4'>Log Out</Link></li>
-                                </>
-                            ) : (
-                                <>
+                                    <li className='nav-item'><Link to='/chat' className='navbar-links nav-link fs-4'>Chat</Link></li>
+                                    </>
+                                ) : (
+                                    <>
                                     <li className='nav-item'><Link to='/login' className='navbar-links nav-link fs-4'>Login</Link></li>
                                     <li className='nav-item'><Link to='/signup' className='navbar-links nav-link fs-4'>Sign Up</Link></li>
                                 </>

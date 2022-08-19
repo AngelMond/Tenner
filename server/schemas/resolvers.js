@@ -5,6 +5,9 @@ const { AuthenticationError } = require('apollo-server-express');
 const resolvers = {
     Query: {
         meClient: async (parent, args, context) => {
+
+            // console.log('context.client ',context.client)
+            // context.log('context.supplier ',context.supplier)
     
             if(context.client){
         
@@ -25,10 +28,10 @@ const resolvers = {
             return client;
         },
         meSupplier: async (parent, args, context) => {
-            console.log(context.supplier);
+            console.log(context.client);
 
-            if(context.supplier){
-                return Supplier.findOne({ _id: context.supplier._id });
+            if(context.client){
+                return Supplier.findOne({ _id: context.client._id });
             }
 
             throw new AuthenticationError('Account not found');
@@ -103,10 +106,12 @@ const resolvers = {
             
             const { input } = args;
 
-            if(context.supplier) {
+            console.log(context.client);
+
+            if(context.client) {
 
                 const addCard = await Supplier.findOneAndUpdate(
-                    {_id: context.supplier._id},
+                    {_id: context.client._id},
                     {$addToSet: { card: input }},
                     { new: true, runValidators: true }
                 );

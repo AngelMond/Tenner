@@ -21,6 +21,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import CardDescription from './components/cardDescriptionForm/cardDescriptionForm';
 // import UserProfile from './components/userProfile/UserProfile';
+import Chat from './components/chat/Chat'
 
 
 
@@ -70,6 +71,8 @@ export default function App() {
 
           <Route path='/login/developer/description' element={<SupplierCard/>}/>
           {/* <Route path='/login/developer/description/test' element={<UserProfile/>}/> */}
+
+          <Route path='/chat' element={<Chat/>}/>
 
           
     
