@@ -50,16 +50,14 @@ export default function Banner() {
         <Container className="col-auto">
           <Card
             style={{ width: "18rem", height: "25rem" }}
-            key={index}
+            key={card._id}
             className="shadow-lg m-1 mb-5 text-center"
           >
-            <a>
               <Card.Img variant="top" src={card.image} alt="context img"/>
-            </a>
             <Card.Body>
               <Card.Title className='cardUsername pb-2'>{supplier.username}</Card.Title>
               <p>{card.description}</p>
-              <p className='mb-0'>From</p> <h1 className='mb-0 test'>${card.price}</h1>
+              <p className='mb-0'>From</p> <h1 className='mb-0 test'>${card.basicPrice}</h1>
             </Card.Body>
           </Card>
         </Container>

@@ -60,7 +60,22 @@ export const CREATE_CARDSUPPLIER =gql`
 `
 
 
-// export const REMOVE_CARD = gql`
-
-// `;
+export const REMOVE_CARD = gql`
+  mutation RemoveCard($id: ID!) {
+  removeCard(_id: $id) {
+    _id
+    username
+    email
+    card {
+      _id
+      role
+      description
+      basicPrice
+      standardPrice
+      premiumPrice
+      image
+    }
+  }
+}
+`;
 
