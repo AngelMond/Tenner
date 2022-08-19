@@ -68,6 +68,12 @@ export const REMOVE_CARD = gql`
     email
     card {
       _id
+      role
+      description
+      basicPrice
+      standardPrice
+      premiumPrice
+      image
     }
   }
 }
