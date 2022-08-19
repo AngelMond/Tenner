@@ -2,6 +2,7 @@
     --background-header:#002B5B ;
     --hover-header-links: #8FE3CF;
     --font-family-navbar:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    --green-button: #1DBF73;
 }
 
 /*background for header*/
@@ -30,7 +31,7 @@
 
 .button-collapse{
     color: white !important;
-    background-color: var(--hover-header-links)!important;
+    background-color: var(--green-button)!important;
 }
 
 #banner{
