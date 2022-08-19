@@ -6,8 +6,8 @@ const { authMiddleware } = require('./utils/auth');
 const app = express();
 const path = require('path');
 //const { application } = require("express");
-const conversationRoute = require ("./routes/conversation");
-const messageRoute = require ("./routes/messages");
+//const conversationRoute = require ("./routes/conversation");
+//const messageRoute = require ("./routes/messages");
 
 PORT = process.env.PORT || 3001;
 
@@ -19,8 +19,8 @@ const server = new ApolloServer({
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use ("/server/conversations", conversationRoute);
-app.use ("/server/message", messageRoute);
+//app.use ("/server/conversations", conversationRoute);
+//app.use ("/server/message", messageRoute);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build/')));

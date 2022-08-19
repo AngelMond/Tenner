@@ -75,3 +75,7 @@
     color: rgba(224, 220, 220, .8);
     cursor: default;
 }
+
+.chatmenuWrapper{
+    overflow-y: scroll;
+}
