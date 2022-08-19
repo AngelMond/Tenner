@@ -53,11 +53,11 @@ export default function Header() {
                             <ul className='col-12 col-sm-6 col-md-3 navbar-nav fs-3 '>
                                 <li className='nav-item'><Link to='/' className='navbar-links nav-link fs-4'>Home</Link></li>
                                 {Auth.loggedIn() ? (
-                                    <li className='nav-item'><Link to='/' onClick={Auth.logout} className='navbar-links nav-link fs-4'>Log Out</Link></li>
+                                    <li className='nav-item'><Link to='/' onClick={Auth.logout} className='navbar-links nav-link fs-4'>LogOut</Link></li>
                                 ) : (
                                     <>
                                     <li className='nav-item'><Link to='/login' className='navbar-links nav-link fs-4'>Login</Link></li>
-                                    <li className='nav-item'><Link to='/signup' className='navbar-links nav-link fs-4'>Sign-Up</Link></li>
+                                    <li className='nav-item'><Link to='/signup' className='navbar-links nav-link fs-4'>SignUp</Link></li>
                                     </>
                                 )}
                             </ul>
