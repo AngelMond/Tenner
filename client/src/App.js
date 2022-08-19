@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/styles.css'
+// import Auth from "./utils/auth";
 import Home from './Views/Home';
 import Header from './components/header/Header';
 import Loginform from './components/loginAndsignup/Loginform';
@@ -8,8 +9,9 @@ import Developersignup from './components/loginAndsignup/Developersignup';
 import Developerlogin from './components/loginAndsignup/Developerlogin';
 import ClientHomepage from './components/userProfile/ClientHomepage';
 import DeveloperDashboard from './components/userProfile/DeveloperDashboard';
-import SupplierCard from './components/createSupplierCard/SupplierCard'
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import SupplierCard from './components/createSupplierCard/SupplierCard';
+import ViewProfile from './components/userProfile/ViewProfile';
+import {  BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
@@ -54,7 +56,7 @@ export default function App() {
       <Router>
       <Header /> 
         <Routes>
-          <Route path="/" element= {<Home />} />
+          <Route path="/" element= { <Home />} />
           <Route path ="/login" element = {<Loginform />} />
           <Route path ="/signup" element = {<Signupform />} />
           <Route path ="/signup/developer" element = {<Developersignup />} />
@@ -62,6 +64,7 @@ export default function App() {
 
           <Route path ="/client/homepage" element = {<ClientHomepage />} />
           <Route path ="/developer/dashboard" element = {<DeveloperDashboard /> } />
+          <Route path ="/viewProfile" element = {<ViewProfile /> } />
 
           <Route path='/login/developer/description' element={<SupplierCard/>}/>
           {/* <Route path='/login/developer/description/test' element={<UserProfile/>}/> */}

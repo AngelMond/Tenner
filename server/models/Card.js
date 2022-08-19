@@ -10,13 +10,13 @@ const cardSchema = new Schema(
         type: String
     },
     basicPrice: {
-        type: Number
+        type: String
     },
     standardPrice: {
-      type: Number
+      type: String
     },
     premiumPrice: {
-      type: Number
+      type: String
     },
     image:{
       type: String

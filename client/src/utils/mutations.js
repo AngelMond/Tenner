@@ -50,18 +50,11 @@ export const CREATE_SUPPLIER = gql`
 `;
 
 export const CREATE_CARDSUPPLIER =gql`
-  mutation CreateCardSupplier ($role: string!, $description: string!, $basicPrice: number!,
-   $standardPrice: number!, $premiumPrice: number!, $image: string!){
-
-    addCardSupplier(role: $role, description: $description, basicPrice: $basicPrice,
-      standardPrice: $standardPrice, premiumPrice: $premiumPrice, image: $image){
+  mutation addCardSupplier ($input: cardInput!){
+    addCardSupplier(input: $input){
       _id
-      role
-      description
-      basicPrice
-      standardPrice
-      premiumPrice
-      image
+      username
+      email
     }
   }
 `
