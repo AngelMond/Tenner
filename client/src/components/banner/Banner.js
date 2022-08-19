@@ -53,9 +53,7 @@ export default function Banner() {
             key={index}
             className="shadow-lg m-1 mb-5 text-center"
           >
-            <a>
               <Card.Img variant="top" src={card.image} alt="context img"/>
-            </a>
             <Card.Body>
               <Card.Title className='cardUsername pb-2'>{supplier.username}</Card.Title>
               <p>{card.description}</p>
