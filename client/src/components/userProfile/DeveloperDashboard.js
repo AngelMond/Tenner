@@ -2,6 +2,8 @@ import './UserProfile.css';
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/esm/Container";
 import { Link } from 'react-router-dom';
+import {useQuery} from '@apollo/client';
+import { ME_SUPPLIER } from '../../utils/queries';
 
 
 
@@ -13,31 +15,35 @@ import user1 from '../../images/user-1.jpg';
 
 export default function DeveloperDashboard() {
 
+  //Get supplier data to create presentation cards
+  const {data} = useQuery(ME_SUPPLIER);
+  console.log(data.meSupplier);
+
     const cardInfo = [
         {
-          image: user1,
-          username: "Chris Nunez",
-          description: "I will design your website in three days.",
-          price: 10,
+          image: data.meSupplier.card[0].image,
+          username: data.meSupplier.username,
+          description: data.meSupplier.card[0].description,
+          price: data.meSupplier.card[0].basicPrice,
         },
-        {
-          image: user1,
-          username: "Chris Nunez",
-          description: "I will design your website in three days.",
-          price: 10,
-        },
-        {
-          image: user1,
-          username: "Chris Nunez",
-          description: "I will design your website in three days.",
-          price: 10,
-        },
-        {
-          image: user1,
-          username: "Chris Nunez",
-          description: "I will design your website in three days.",
-          price: 10,
-        },
+        // {
+        //   image: user1,
+        //   username: "Chris Nunez",
+        //   description: "I will design your website in three days.",
+        //   price: 10,
+        // },
+        // {
+        //   image: user1,
+        //   username: "Chris Nunez",
+        //   description: "I will design your website in three days.",
+        //   price: 10,
+        // },
+        // {
+        //   image: user1,
+        //   username: "Chris Nunez",
+        //   description: "I will design your website in three days.",
+        //   price: 10,
+        // },
         
         
   

@@ -18,57 +18,45 @@ export default function Header() {
 
         <header className='row'>
             <nav id='nav' className='navbar navbar-expand-sm fixed-top justify-content-center'>
-                <div className='container row d-flex flex-wrap  justify-content-between'>  {/* <!--div centrado centrar contenido dentro --> */}
-                    <div className='col-2'>
+                <div className='container row d-flex flex-wrap g-0 px-4'>  {/* <!--div centrado centrar contenido dentro --> */}
+                    <div className='col-3 d-flex justify-content-center'>
                         {/* <!--LOGO Tenner--> */}
-                        <a href="/" id="logo-tenner" className="navbar-links fs-1 fw-bold navbar-brand col-auto">Tenner</a>
-                        
-                        {/* <!--Button to collapse navbar--> */}
-                        <button
-                            className='navbar-toggler'
-                            type='button'
-                            data-bs-toggle='collapse'
-                            data-bs-target='#navbar-container'
-                            aria-controls='navbar-container'
-                            aria-expanded='false'
-                            aria-label='show / hide navbar-container'
-                        >
-                            <span className='navbar-toggler-icon'></span>
-                        </button>
+                        <a href="/" id="logo-tenner" className="navbar-links fs-1 fw-bold text-center ">Tenner</a>
                     </div>
 
-                    {/* Search Input
-                    <div className='search-input-container d-flex  rounded col-auto p-0 align-items-center ps-2'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search " viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg>
-                        <form className='search-form col-auto h-100'>
-                            <input id='search-input' className='ps-3 pe-2 ms-2' type='search' name='' placeholder='prueba' />
-                            <button className='fw-bold px-3 h-100 search-button rounded-end text-white' type='submit'>
-                                Search
-                            </button>
-                        </form>
-                    </div> */}
+                    {/* <!--Button to collapse navbar--> */}
+                    <button
+                        className='navbar-toggler button-collapse col-2'
+                        type='button'
+                        data-bs-toggle='collapse'
+                        data-bs-target='#navbar-container'
+                        aria-controls='navbar-container'
+                        aria-expanded='false'
+                        aria-label='show / hide navbar-container'
+                    >
+                        <span className='navbar-toggler-icon button-collapse'></span>
+                    </button>
 
-                    <div className='col-auto'>
-                        {/* <!--Navbar--> */}
-                        <div className='row  collapse navbar-collapse' id='navbar-container'>
-                            <ul className='col-12 col-sm-6 col-md-3 navbar-nav fs-3 '>
-                                <li className='nav-item'><Link to='/' className='navbar-links nav-link fs-4'>Home</Link></li>
-                                {Auth.loggedIn() ? (
-                                    <>
+
+                    {/* <!--Navbar--> */}
+                    <div className='col-7 p-2 mt-3 row  collapse navbar-collapse' id='navbar-container'>
+                        <ul className='d-flex flex-wrap justify-content-end navbar-nav fs-3 text-center'>
+                            <li className='nav-item'><Link to='/' className='navbar-links nav-link fs-4'>Home</Link></li>
+                            {Auth.loggedIn() ? (
+                                <>
                                     <li className='nav-item'><Link to='/developer/dashboard' className='navbar-links nav-link fs-4'>Dashboard</Link></li>
                                     <li className='nav-item'><Link to='/' onClick={Auth.logout} className='navbar-links nav-link fs-4'>Log Out</Link></li>
+                                    <li className='nav-item'><Link to='/chat' className='navbar-links nav-link fs-4'>Chat</Link></li>
                                     </>
                                 ) : (
                                     <>
                                     <li className='nav-item'><Link to='/login' className='navbar-links nav-link fs-4'>Login</Link></li>
-                                    <li className='nav-item'><Link to='/signup' className='navbar-links nav-link fs-4'>SignUp</Link></li>
-                                    </>
-                                )}
-                            </ul>
-                        </div>
+                                    <li className='nav-item'><Link to='/signup' className='navbar-links nav-link fs-4'>Sign Up</Link></li>
+                                </>
+                            )}
+                        </ul>
                     </div>
+
                 </div>
             </nav>
         </header>

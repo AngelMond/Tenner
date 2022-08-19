@@ -40,8 +40,10 @@ label {
     color: rgb(34, 34, 34)
 }
 
-
-
-.Developer {
-    
+.login-component
+{
+    margin-top: 100px;
+}
+.signup-component{
+    margin-top: 180px;
 }
