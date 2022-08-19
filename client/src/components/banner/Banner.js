@@ -50,7 +50,7 @@ export default function Banner() {
         <Container className="col-auto">
           <Card
             style={{ width: "18rem", height: "25rem" }}
-            key={index}
+            key={card._id}
             className="shadow-lg m-1 mb-5 text-center"
           >
               <Card.Img variant="top" src={card.image} alt="context img"/>

@@ -35,6 +35,7 @@ export const SUPPLIERS = gql`
         suppliers {
         username
         card {
+            _id
             description
             basicPrice
             image
