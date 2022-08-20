@@ -17,13 +17,24 @@ import user1 from '../../images/user-1.jpg';
 export default function DeveloperDashboard() {
 
   //Get supplier data to create presentation cards
-  const { data } = useQuery(ME_SUPPLIER);
+  const { data, loading } = useQuery(ME_SUPPLIER);
   
   //Store array of cards
-  let cardInfo = data.meSupplier.card; 
+  let cardInfo; 
 
   //Store supplier name
-  let username = data.meSupplier.username; 
+  let username;
+
+  if(!loading){
+    //Store supplier name
+    username = data.meSupplier.username; 
+  //Store array of cards
+  cardInfo = data.meSupplier.card; 
+
+  }else{
+    return <h2>Loading...</h2>
+  }
+  
 
 
   const renderCard = (cardInfo, ix) => {
