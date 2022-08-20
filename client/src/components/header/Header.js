@@ -18,7 +18,6 @@ export default function Header() {
     //load the client object
     if (!client.loading) {
         clientInfo = client.data;
-        console.log("client", clientInfo);
     } else {
         return <h2>Loading...</h2>
     }
@@ -26,7 +25,6 @@ export default function Header() {
     //load the supplier objet
     if (!supplier.loading) {
         supplierInfo = supplier.data;
-        console.log("supplier", supplierInfo);
     } else {
         return <h2>Loading...</h2>
     }
@@ -67,7 +65,7 @@ export default function Header() {
                                     {clientInfo.meClient === null ? (
                                         <li className='nav-item'><Link to='/developer/dashboard' className='navbar-links nav-link fs-4'>Dashboard</Link></li>        
                                         ) : (
-                                        <li className='nav-item'><Link to='/client/suppliers' className='navbar-links nav-link fs-4'>Suppliers</Link></li>
+                                        <li className='nav-item'><Link to='/client/suppliers' className='navbar-links nav-link fs-4'>Freelancers</Link></li>
                                     )}
                                     <li className='nav-item'><Link to='/' onClick={Auth.logout} className='navbar-links nav-link fs-4'>Log Out</Link></li>
                                     <li className='nav-item'><Link to='/chat' className='navbar-links nav-link fs-4'>Chat</Link></li>

@@ -18,18 +18,12 @@ const clientSchema = new Schema(
     password: {
       type: String,
       required: true,
-    },
-    suppliers: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Supplier',
-      }
-    ]
+    }
   },
   // set this to use virtual below
   {
     toJSON: {
-      virtuals: true,
+      getters: true,
     },
   }
 );
@@ -40,7 +34,6 @@ clientSchema.pre('save', async function (next) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
-
   next();
 });
 
@@ -49,9 +42,6 @@ clientSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-clientSchema.virtual('suppliersCount').get( function () {
-  return this.suppliers.length;
-});
 
 
 const Client = model('Client', clientSchema);
