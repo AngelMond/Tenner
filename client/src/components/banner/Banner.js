@@ -7,6 +7,7 @@ import { render } from 'react-dom';
 import { Image } from 'react-bootstrap';
 import { SUPPLIERS } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
+import Button from 'react-bootstrap/Button'
 
 // all user images
 import user1 from '../../images/user-1.jpg';
@@ -22,14 +23,6 @@ import user8 from '../../images/user-8.jpg';
 
 export default function Banner() {
 
-
-  {/* ESTE CODIGO ESTA ROMPIENDO EL RESPONSIVE */}
-  // var background = { backgroundSize: 'cover' };
-  // var textStyle = {
-  //   position: 'absolute',
-  //   top: '80%',
-  //   left: '50%'
-  // }
 
   const {data, loading} = useQuery(SUPPLIERS);
 
@@ -165,15 +158,16 @@ export default function Banner() {
           {allSuppliers.map(renderAllSuppliers)}
         </div>
       </div>
-
-      {/* ESTE CODIGO ESTA ROMPIENDO EL RESPONSIVE */}
-      {/* <div className='test'>
-        <Image
-          style={background} responsive
-          src="http://www.milkbardigital.com.au/wp-content/uploads/2015/11/Milkbar-Home-Background.jpg">
-        </Image>
-        <h1 style={textStyle}></h1>
-      </div> */}
+      <div id='bottomImage' className='container-fluid text-center shadow-lg'>
+        
+          <Card style={{width: '18rem'}} id='imageText'>
+          <Card.Body>
+            <Card.Title>Get Started Today!</Card.Title>
+            <Button className='mt-3'>Sign up</Button>
+          </Card.Body>
+          </Card>
+       
+      </div>
     </div>
   )
 };
