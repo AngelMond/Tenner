@@ -104,3 +104,7 @@ input[type=search]{
 #selectImageCardButton:hover {
     cursor: pointer;
 }
+
+.client-suppliers-view{
+    margin-top: 250px;
+}
