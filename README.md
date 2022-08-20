@@ -45,6 +45,7 @@ Tenner Homepage
   - [Table of Contents](#table-of-contents)
     - [Installation for dev](#installation-for-dev)
     - [Credits](#credits)
+  - [Walkthrough Video](#walkthrough-video)
   - [Licence](#licence)
   - [Features](#features)
   - [Contribution](#contribution)
@@ -104,6 +105,16 @@ LinkedIn: [David-Trujillo-Ruiz](https://www.linkedin.com/in/david-uriel-trujillo
 
 ---
  
+---
+
+## Walkthrough Video
+
+Click on link below and learn all the functionalities you can do as a Client and Developer.
+
+[Tenner manual user](https://drive.google.com/file/d/1S5I6aEub21jvKfbh0W36anIEN89knjVm/view?usp=sharing)
+
+---
+
 ---
 ## Licence
 MIT License
