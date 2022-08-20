@@ -6,6 +6,7 @@ import Container from "react-bootstrap/esm/Container";
 
 import { SUPPLIERS } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
+import Button from 'react-bootstrap/Button'
 
 
 
@@ -76,6 +77,16 @@ export default function Banner() {
           {/* {Render all cardSuppliers} */}
           {allSuppliers.map(renderAllSuppliers)}
         </div>
+      </div>
+      <div id='bottomImage' className='container-fluid text-center shadow-lg'>
+        
+          <Card style={{width: '18rem'}} id='imageText'>
+          <Card.Body>
+            <Card.Title>Get Started Today!</Card.Title>
+            <Button className='mt-3'>Sign up</Button>
+          </Card.Body>
+          </Card>
+       
       </div>
     </div>
   )
