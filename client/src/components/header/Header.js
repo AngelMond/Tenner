@@ -8,11 +8,37 @@ import { useQuery } from '@apollo/client';
 
 export default function Header() {
 
-    const result = useQuery(ME_CLIENT);
-    const resultSupplier = useQuery(ME_SUPPLIER);
+    // const resultClient = useQuery(ME_CLIENT);
+    // const resultSupplier = useQuery(ME_SUPPLIER);
 
-    console.log(result);
-    console.log(resultSupplier);
+    // let hola1;
+    // let hola2;
+
+    // if(!resultClient.loading){
+    //     hola1 = resultClient.data.meClient;
+    // }else{
+    //     return <h2>Loading...</h2>
+    // }
+
+    // if(!resultSupplier.loading){
+    //     hola2 = resultSupplier.data.meSupplier;
+    // }else{
+    //     return <h2>Loading...</h2>
+    // }
+
+
+    // if(hola1){
+
+    //     console.log('holaaaaaa')
+    // }
+
+    // if (hola2) {
+    //     console.log('hola2')
+    // }
+
+    // console.log('clinet ',hola1);
+    // console.log('supplier ',hola2);
+
 
     return (
 
