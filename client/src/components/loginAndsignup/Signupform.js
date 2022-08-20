@@ -107,10 +107,10 @@ export default function Signupform() {
             {/* <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback> */}
           </div>
 
-          <div className='form-group mt-3'>
+          <div className='form-group mt-3 text-center'>
             <Link to='/signup/developer' >
               <label>If you plan to offer your services click on the button below.</label>
-              <button  className='btn btn-primary'
+              <button  className='btn btn-primary mt-3'
               type='button'>
                 Click here to create a Developer Account!
               </button>
