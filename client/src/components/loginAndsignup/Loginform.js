@@ -5,6 +5,7 @@ import { useState } from "react"
 import Auth from "../../utils/auth";
 import{ useMutation } from "@apollo/client";
 import { LOGIN_CLIENT } from '../../utils/mutations';
+import Footer from '../footer/Footer'
 
 
 export default function Loginform() {
@@ -51,7 +52,7 @@ export default function Loginform() {
 
   return (
 
-
+<>
     <div className='Auth-form-container login-component'>
       <form className="Auth-form" noValidate validated = {validated} onSubmit={handleFormSubmit}>
         {/* <alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant ="danger">
@@ -110,6 +111,9 @@ export default function Loginform() {
           </div>
         </div>
       </form>
+     
     </div>
+    <Footer />
+    </>
   )
 }

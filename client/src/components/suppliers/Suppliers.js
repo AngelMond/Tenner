@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/esm/Container";
-
+import Footer from '../footer/Footer'
 
 import { SUPPLIERS } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
@@ -49,9 +49,12 @@ export default function Suppliers() {
   };
 
   return (
+    <>
         <div className="container d-flex flex-wrap client-suppliers-view">
           {/* {Render all cardSuppliers} */}
           {allSuppliers.map(renderAllSuppliers)}
         </div> 
+        <Footer />
+        </>
   )
 };

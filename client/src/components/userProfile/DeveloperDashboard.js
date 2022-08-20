@@ -7,7 +7,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import { ME_SUPPLIER } from '../../utils/queries';
 import { REMOVE_CARD } from '../../utils/mutations';
 import Auth from '../../utils/auth';
-
+import Footer from '../footer/Footer'
 
 
 // import images
@@ -65,6 +65,7 @@ export default function DeveloperDashboard() {
 
 
   return (
+    <>
     <div>
       <div className="cardContainer text-center">
         <h1 className="">Your Dasboard</h1>
@@ -103,6 +104,7 @@ export default function DeveloperDashboard() {
         })}
       </div>
     </div>
-
+    <Footer />
+    </>
   );
 }

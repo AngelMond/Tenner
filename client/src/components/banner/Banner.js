@@ -3,6 +3,7 @@ import Search from './Search';
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/esm/Container";
 import { Link } from 'react-router-dom';
+import Footer from '../footer/Footer'
 
 import { SUPPLIERS } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
@@ -88,6 +89,7 @@ export default function Banner() {
           </Card>
        
       </div>
+     <Footer />
     </div>
   )
 };
