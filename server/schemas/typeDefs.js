@@ -19,7 +19,7 @@ const typeDefs = gql`
     }
 
     type Card {
-        _id: ID
+        _id: ID!
         role: String
         description: String
         basicPrice: Int
@@ -69,13 +69,17 @@ const typeDefs = gql`
         image: String
     }
 
+    input cardIdInput {
+        _id: ID
+    }
+
     type Mutation {
         loginClient(email: String! password: String!):AuthClient
         createClient(input: createClientInput!):AuthClient
         loginSupplier(email: String! password: String!):AuthSupplier
         createSupplier(input: createSupplierInput!): AuthSupplier
         addCardSupplier(input: cardInput!):Supplier
-        removeCard(_id: ID!):Supplier
+        removeCard(input: cardIdInput!):Supplier
     }
 `;
 
