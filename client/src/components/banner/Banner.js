@@ -2,7 +2,7 @@ import React from 'react';
 import Search from './Search';
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/esm/Container";
-
+import { Link } from 'react-router-dom';
 
 import { SUPPLIERS } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
@@ -83,7 +83,7 @@ export default function Banner() {
           <Card style={{width: '18rem'}} id='imageText'>
           <Card.Body>
             <Card.Title>Get Started Today!</Card.Title>
-            <Button className='mt-3'>Sign up</Button>
+            <Button className='mt-3'><Link to='/signup' className='text-white text-decoration-none' id='linktoSignup'>Sign up</Link></Button>
           </Card.Body>
           </Card>
        

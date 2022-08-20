@@ -15,7 +15,7 @@ function Footer () {
                         <Col className='pt-3'>
                         <h5>Socials</h5>
                         <ul className='list-unstyled'>
-                            <a href='https://github.com/AngelMond/Tenner' target='_blank' rel='noopener noreferrer' id='githubRemove'><li>Github</li></a>
+                            <a href='https://github.com/AngelMond/Tenner' target='_blank' rel='noopener noreferrer' className='text-decoration-none'><li>Github</li></a>
                         </ul>
                         </Col>
                         <Col className='pt-3'>
