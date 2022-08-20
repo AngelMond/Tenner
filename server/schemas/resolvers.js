@@ -112,14 +112,15 @@ const resolvers = {
         },
         removeCard: async (parent, args, context) => {
 
-            const {_id} = args;
+            const {input} = args;
+            const {_id} = input;
 
             if(context.user){
 
                 const deleteCard = await Supplier.findOneAndUpdate(
                     {_id: context.user._id},
-                    {$pull: { card: _id}},
-                    { new: true, runValidators: true }
+                    {$pull: { card: {_id}}},
+                    { new: true}
                 );
 
                 return deleteCard;
