@@ -14,17 +14,17 @@ https://tenner-app.herokuapp.com/
 
 -Thanks to this, any developer that wants to start a freelance career, can make an account in Tenner and sell his services online. Likewise, any person looking for a freelancer to create their app or website can find them in out website Tenner.
 
-This project uses the following dependencies.
-[Axios](https://www.npmjs.com/package/axios) Promise based HTTP client for the browser and node.js
-[Bootstrap](https://www.npmjs.com/package/bootstrap) Tge most popular front-end framwork.
-[graphql](https://www.npmjs.com/package/graphql) The JavaScript reference implementation for GraphQL, a query language for APIs created by Facebook.
-[jwt-decode](https://www.npmjs.com/package/jwt-decode) decoding JWTs token which are Base64Url encoded.
-[react](https://www.npmjs.com/package/react) decoding JWTs token which are Base64Url encoded.
-[react-bootstrap](https://www.npmjs.com/package/react-bootstrap) decoding JWTs token which are Base64Url encoded.
-[react-dom](https://www.npmjs.com/package/jwt-decode) decoding JWTs token which are Base64Url encoded.
-[react-router-dom](https://www.npmjs.com/package/react-dom) decoding JWTs token which are Base64Url encoded.
-[react-scripts](https://www.npmjs.com/package/react-scripts) decoding JWTs token which are Base64Url encoded.
-[web-vitals](https://www.npmjs.com/package/web-vitals) decoding JWTs token which are Base64Url encoded.
+This project uses the following dependencies.  
+[Axios](https://www.npmjs.com/package/axios) Promise based HTTP client for the browser and node.js  
+[Bootstrap](https://www.npmjs.com/package/bootstrap) Tge most popular front-end framwork.  
+[graphql](https://www.npmjs.com/package/graphql) The JavaScript reference implementation for GraphQL, a query language for APIs created by Facebook.  
+[jwt-decode](https://www.npmjs.com/package/jwt-decode) decoding JWTs token which are Base64Url encoded.  
+[react](https://www.npmjs.com/package/react) decoding JWTs token which are Base64Url encoded.  
+[react-bootstrap](https://www.npmjs.com/package/react-bootstrap) decoding JWTs token which are Base64Url encoded.  
+[react-dom](https://www.npmjs.com/package/jwt-decode) decoding JWTs token which are Base64Url encoded.  
+[react-router-dom](https://www.npmjs.com/package/react-dom) decoding JWTs token which are Base64Url encoded.  
+[react-scripts](https://www.npmjs.com/package/react-scripts) decoding JWTs token which are Base64Url encoded.  
+[web-vitals](https://www.npmjs.com/package/web-vitals) decoding JWTs token which are Base64Url encoded.  
 
 
 
