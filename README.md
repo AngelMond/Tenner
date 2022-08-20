@@ -60,7 +60,7 @@ Tenner Homepage
 
 ---
 ### Credits
-Angel Mondragon
+Ángel Mondragón 
 Github: [AngelMond](https://github.com/AngelMond)
 LinkedIn: [Angel-Mondragon](https://www.linkedin.com/in/angel-mondragon-a27736221/)
 
@@ -73,12 +73,12 @@ LinkedIn: [Jorge-Cardenas](https://www.linkedin.com/in/jorgecdl96)
 <br/>
 
 Chris Nuñez
-Github: [Chriznunez](https://github.com/chrisnunez)
+Github: [Chrisnunez](https://github.com/chrisnunez)
 LinkedIn: [Christian-Nunez](https://www.linkedin.com/in/christian-nunez-04491818b/)
 
 <br/>
 
-Pablo Eugenio Garcia
+Pablo Eugenio García
 Github: [Pablogarciag02](https://github.com/Pablogarciag02)
 LinkedIn: [Pablo-Eugenio-Gacía](https://www.linkedin.com/in/pablo-garc%C3%ADa-08842621b/)
 
@@ -91,12 +91,12 @@ LinkedIn: [Edwin-Simpson-Robles](https://www.linkedin.com/in/edwin-simpson-50948
 <br/>
 
 David Trujillo
-Github: [AngelMond](https://github.com/AngelMond)
-LinkedIn: [Angel-Mondragon](https://www.linkedin.com/in/angel-mondragon-a27736221/)
+Github: [DavidTrujilloR](https://github.com/DavidTrujilloR)
+LinkedIn: [David-Trujillo-Ruiz](https://www.linkedin.com/in/david-uriel-trujillo-ruiz-941a36231/)
 
 
 ---
-
+ 
 ---
 ## Licence
 MIT License
