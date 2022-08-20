@@ -74,9 +74,9 @@ export default function App() {
 
           <Route path='/chat' element={<Chat/>}/>
 
-          
     
         </Routes>
+
       </Router>
      </ApolloProvider>
   )
