@@ -18,7 +18,6 @@ export default function Header() {
     //load the client object
     if (!client.loading) {
         clientInfo = client.data;
-        console.log("client", clientInfo);
     } else {
         return <h2>Loading...</h2>
     }
@@ -26,7 +25,6 @@ export default function Header() {
     //load the supplier objet
     if (!supplier.loading) {
         supplierInfo = supplier.data;
-        console.log("supplier", supplierInfo);
     } else {
         return <h2>Loading...</h2>
     }
