@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/esm/Container";
 
@@ -38,7 +39,7 @@ export default function Suppliers() {
               <Card.Title className='cardUsername pb-2'>{supplier.username}</Card.Title>
               <p>{card.description}</p>
               <p className='mb-0'>From</p> <h1 className='mb-0 test'>${card.basicPrice}</h1>
-              <button className='mt-4 btn btn-success'>Add Service</button>
+              <button className='mt-4 btn btn-success'><Link className='text-decoration-none text-white' to="/chat">Chat</Link></button>
             </Card.Body>
           </Card>
         </Container>
