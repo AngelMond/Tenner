@@ -11,6 +11,8 @@ import ClientHomepage from './components/userProfile/ClientHomepage';
 import DeveloperDashboard from './components/userProfile/DeveloperDashboard';
 import SupplierCard from './components/createSupplierCard/SupplierCard';
 import ViewProfile from './components/userProfile/ViewProfile';
+import Suppliers from './components/suppliers/Suppliers';
+import Footer from './components/footer/Footer';
 import {  BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   ApolloClient,
@@ -58,7 +60,9 @@ export default function App() {
     <ApolloProvider client={client}>
       <Router>
       <Header /> 
-        <Routes>
+      <main>
+          
+      <Routes>
           <Route path="/" element= { <Home />} />
           <Route path ="/login" element = {<Loginform />} />
           <Route path ="/signup" element = {<Signupform />} />
@@ -66,19 +70,25 @@ export default function App() {
           <Route path='/login/developer' element={<Developerlogin/>}/>
 
           <Route path ="/client/homepage" element = {<ClientHomepage />} />
+          <Route path ="/client/suppliers" element = {<Suppliers />} />
           <Route path ="/developer/dashboard" element = {<DeveloperDashboard /> } />
           <Route path ="/viewProfile" element = {<ViewProfile /> } />
+          
 
           <Route path='/login/developer/description' element={<SupplierCard/>}/>
           {/* <Route path='/login/developer/description/test' element={<UserProfile/>}/> */}
 
           <Route path='/chat' element={<Chat/>}/>
 
+        
     
         </Routes>
-
+      </main>
+      <Footer />
       </Router>
+    
      </ApolloProvider>
+     
   )
 }
 

@@ -8,36 +8,29 @@ import { useQuery } from '@apollo/client';
 
 export default function Header() {
 
-    // const resultClient = useQuery(ME_CLIENT);
-    // const resultSupplier = useQuery(ME_SUPPLIER);
+    const client = useQuery(ME_CLIENT);
+    const supplier = useQuery(ME_SUPPLIER);
 
-    // let hola1;
-    // let hola2;
+    //variables to get the object when client or supplier log in
+    let clientInfo;
+    let supplierInfo;
 
-    // if(!resultClient.loading){
-    //     hola1 = resultClient.data.meClient;
-    // }else{
-    //     return <h2>Loading...</h2>
-    // }
+    //load the client object
+    if (!client.loading) {
+        clientInfo = client.data;
+        console.log("client", clientInfo);
+    } else {
+        return <h2>Loading...</h2>
+    }
 
-    // if(!resultSupplier.loading){
-    //     hola2 = resultSupplier.data.meSupplier;
-    // }else{
-    //     return <h2>Loading...</h2>
-    // }
+    //load the supplier objet
+    if (!supplier.loading) {
+        supplierInfo = supplier.data;
+        console.log("supplier", supplierInfo);
+    } else {
+        return <h2>Loading...</h2>
+    }
 
-
-    // if(hola1){
-
-    //     console.log('holaaaaaa')
-    // }
-
-    // if (hola2) {
-    //     console.log('hola2')
-    // }
-
-    // console.log('clinet ',hola1);
-    // console.log('supplier ',hola2);
 
 
     return (
@@ -70,12 +63,17 @@ export default function Header() {
                             <li className='nav-item'><Link to='/' className='navbar-links nav-link fs-4'>Home</Link></li>
                             {Auth.loggedIn() ? (
                                 <>
-                                    <li className='nav-item'><Link to='/developer/dashboard' className='navbar-links nav-link fs-4'>Dashboard</Link></li>
+                                    {/* if loggedIn as a client render the link for the client if not render the links for the supplier */}
+                                    {clientInfo.meClient === null ? (
+                                        <li className='nav-item'><Link to='/developer/dashboard' className='navbar-links nav-link fs-4'>Dashboard</Link></li>        
+                                        ) : (
+                                        <li className='nav-item'><Link to='/client/suppliers' className='navbar-links nav-link fs-4'>Suppliers</Link></li>
+                                    )}
                                     <li className='nav-item'><Link to='/' onClick={Auth.logout} className='navbar-links nav-link fs-4'>Log Out</Link></li>
                                     <li className='nav-item'><Link to='/chat' className='navbar-links nav-link fs-4'>Chat</Link></li>
-                                    </>
-                                ) : (
-                                    <>
+                                </>
+                            ) : (
+                                <>
                                     <li className='nav-item'><Link to='/login' className='navbar-links nav-link fs-4'>Login</Link></li>
                                     <li className='nav-item'><Link to='/signup' className='navbar-links nav-link fs-4'>Sign Up</Link></li>
                                 </>
