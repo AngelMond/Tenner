@@ -5,7 +5,8 @@
 https://github.com/AngelMond/Tenner
 
 ## Deployed app link
-[Deployed app link!](https://jate-text-pablogarciag02.herokuapp.com/)
+[Deployed app link!](https://tenner-app.herokuapp.com/)
+https://tenner-app.herokuapp.com/
 ## About this Project
 -Due to everchanging tendencies, and a move into the digitial world. Every company, small business owner or independent worker is at one point in need of his or her personal/business website or app.
 
@@ -36,11 +37,17 @@ Tenner Homepage
 
 ---
 ## Table of Contents
-- [Installation](###installation-for-dev)
-- [Credits](#credits)
-- [Licence](#licence)
-- [Features](#features)
-- [Contribution](#contribution)
+- [Tenner](#tenner)
+  - [Hire a Developer Today!](#hire-a-developer-today)
+- [Gihub Repository](#gihub-repository)
+  - [Deployed app link](#deployed-app-link)
+  - [About this Project](#about-this-project)
+  - [Table of Contents](#table-of-contents)
+    - [Installation for dev](#installation-for-dev)
+    - [Credits](#credits)
+  - [Licence](#licence)
+  - [Features](#features)
+  - [Contribution](#contribution)
 
 ---
 
