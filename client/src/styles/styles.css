@@ -1,31 +1,135 @@
 :root{
     --background-header:#002B5B ;
     --hover-header-links: #8FE3CF;
+    --font-family-navbar:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    --green-button: #1DBF73;
 }
 
 /*background for header*/
 #nav{
     background-color: var(--background-header);
-    min-height: 150px;
+    min-height: 120px;
 }
+
 /*color links*/
 .navbar-links{
     color: white !important;
+    font-family: var(--font-family-navbar);
+    letter-spacing: 1px;
 }
 /*change link color when hover*/
 .navbar-links:hover{
     color: var(--hover-header-links) !important;
 }
 
+#logo-tenner{
+    text-decoration: none !important;
+}
+#logo-tenner:hover{
+    cursor: pointer;
+}
+
+.button-collapse{
+    color: white !important;
+    background-color: var(--green-button)!important;
+}
+
+#banner{
+    margin-top: 120px;
+    max-width: 100%;
+    height: 90vh;
+    background-image: url(../images/banner2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position:  0px -50px;
+}
+
+#banner #wrap{
+    max-width: 1000px;
+    height: 100%;
+}
+
+.test {
+    max-width: 100%;
+}
+
+/*Container for search input*/
+.search-input-container{
+    background-color: #fff;
+}
+
 /*search input styles*/
 input[type=search]{
    outline: none;
-   min-height: 40px;
-   border-radius: 10px;
-   background-color: none;
+   min-height: 2.5rem;
+   min-width: 25rem !important;
+   border: none;
+}
+/*Search input from banner*/
+.search-button{
+    min-height: 40px;
+    border: none;
+    background-color: #1DBF73;
+}
+.search-button:hover{
+    /* box-shadow: 0px 0px 2px 2px var(--hover-header-links) inset; */
+    cursor: pointer;
+    background-color: #1ba162;
 }
 
-input[type=search]:focus {
-    background-color: lightblue;
+
+/* STYLES for Supplier card container*/
+.supplier-card-container{
+    margin-top: 200px;
+}
+
+.descriptionInputCardSupplier{
+    min-height: 100px !important;
+    max-height: 150px !important;
+}
+
+.drag-area{
+    border:  3px dashed #bcc1c5;
+    width: 500px;
+    height: 200px;
+}
+
+/*This will be active when dragging files above the interface */
+.dragActive{
+    background-color: #b8d4fe;
+    color: black;
+    border: 2px dashed #002B5B;
+}
+
+#selectImageCardButton:hover {
+    cursor: pointer;
+}
+
+.client-suppliers-view{
+    margin-top: 250px;
+}
+
+#bottomImage {
+    margin-top: 120px;
+    max-width: 100%;
+    height: 90vh;
+    background-image: url(../images/bottomImage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position:  0px -50px;
+    opacity: 85%;
+    padding-left: 52rem;
+    padding-top: 20rem;
+}
+
+
+.testFooter {
+    margin-top: 112rem;
+    /* background-color:#dadce0; */
+    
+}
+
+@media screen and (min-width: 0px) and (max-width: 700px) {
+    #bottomImage { display: none; }  /* show it on small screens */ 
   }
 

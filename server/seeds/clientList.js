@@ -1,0 +1,10 @@
+module.exports = [{"id":1,"firstName":"Davis","lastName":"Bonifant","age":1984,"username":"dbonifant0","email":"dbonifant0@de.vu","password":"pHJs2T1DydT"},
+{"id":2,"firstName":"Vidovic","lastName":"Castelletto","age":1993,"username":"vcastelletto1","email":"vcastelletto1@moonfruit.com","password":"2tYTMLX9I"},
+{"id":3,"firstName":"Ekaterina","lastName":"Jenks","age":1992,"username":"ejenks2","email":"ejenks2@hao123.com","password":"sdwO5KE"},
+{"id":4,"firstName":"Cyndia","lastName":"Tandy","age":2010,"username":"ctandy3","email":"ctandy3@deviantart.com","password":"UtlEZgqLE"},
+{"id":5,"firstName":"Aubrette","lastName":"Oldacres","age":2004,"username":"aoldacres4","email":"aoldacres4@cargocollective.com","password":"ZDm43mHfDTMb"},
+{"id":6,"firstName":"Tome","lastName":"Godber","age":2007,"username":"tgodber5","email":"tgodber5@free.fr","password":"4xBwofsPnl"},
+{"id":7,"firstName":"Evan","lastName":"Tant","age":2010,"username":"etant6","email":"etant6@cargocollective.com","password":"4F5Zww1DwS"},
+{"id":8,"firstName":"Benedetta","lastName":"Jensen","age":1987,"username":"bjensen7","email":"bjensen7@lulu.com","password":"7b4nQ9IXrE"},
+{"id":9,"firstName":"Cherye","lastName":"Skellion","age":1997,"username":"cskellion8","email":"cskellion8@blogs.com","password":"oiPXAWXNt53E"},
+{"id":10,"firstName":"Yolanda","lastName":"Klicher","age":2007,"username":"yklicher9","email":"yklicher9@google.com.au","password":"qet7lovrOk"}]
