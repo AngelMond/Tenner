@@ -60,7 +60,7 @@ Tenner Homepage
 
 ---
 ### Credits
-Ángel Mondragón 
+Ángel Mondragón  
 Github: [AngelMond](https://github.com/AngelMond)
 LinkedIn: [Angel-Mondragon](https://www.linkedin.com/in/angel-mondragon-a27736221/)
 
@@ -72,25 +72,25 @@ LinkedIn: [Jorge-Cardenas](https://www.linkedin.com/in/jorgecdl96)
 
 <br/>
 
-Chris Nuñez
+Chris Nuñez  
 Github: [Chrisnunez](https://github.com/chrisnunez)
 LinkedIn: [Christian-Nunez](https://www.linkedin.com/in/christian-nunez-04491818b/)
 
 <br/>
 
-Pablo Eugenio García
+Pablo Eugenio García  
 Github: [Pablogarciag02](https://github.com/Pablogarciag02)
 LinkedIn: [Pablo-Eugenio-Gacía](https://www.linkedin.com/in/pablo-garc%C3%ADa-08842621b/)
 
 <br/>
 
-Edwin Simpson Robles
+Edwin Simpson Robles  
 Github: [Edwin0204](https://github.com/Edwin0204)
 LinkedIn: [Edwin-Simpson-Robles](https://www.linkedin.com/in/edwin-simpson-50948052)
 
 <br/>
 
-David Trujillo
+David Trujillo  
 Github: [DavidTrujilloR](https://github.com/DavidTrujilloR)
 LinkedIn: [David-Trujillo-Ruiz](https://www.linkedin.com/in/david-uriel-trujillo-ruiz-941a36231/)
 
